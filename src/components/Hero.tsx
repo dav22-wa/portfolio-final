@@ -23,8 +23,9 @@ export function Hero() {
         timeout = setTimeout(() => setText(currentTitle.slice(0, text.length + 1)), 60);
       } else {
         setPhase('pausing');
-        timeout = setTimeout(() => setPhase('deleting'), 2500);
       }
+    } else if (phase === 'pausing') {
+      timeout = setTimeout(() => setPhase('deleting'), 2000);
     } else if (phase === 'deleting') {
       if (text.length > 0) {
         timeout = setTimeout(() => setText(currentTitle.slice(0, text.length - 1)), 30);

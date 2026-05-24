@@ -14,18 +14,67 @@ const navLinks = [
 
 function BrandLogo() {
   return (
-    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Sleek 'W' Monogram */}
-      <path 
-        d="M5 6L13 28L18 16L23 28L31 6" 
-        stroke="currentColor" 
-        strokeWidth="4" 
-        strokeLinecap="round" 
-        strokeLinejoin="round" 
-        className="text-white group-hover:text-[#e5b927] transition-colors duration-300" 
-      />
-      <circle cx="18" cy="16" r="3" className="fill-[#e5b927]" />
-    </svg>
+    <div className="relative w-[36px] h-[36px] flex items-center justify-center overflow-visible">
+      {/* Continuous Splash Ring behind the dot */}
+      <div className="absolute top-[13px] left-[15px] w-[6px] h-[6px]">
+        <span className="absolute inline-flex w-[6px] h-[6px] rounded-full bg-[#e5b927] animate-ping opacity-70" style={{ animationDuration: '2.5s' }}></span>
+        <span className="absolute inline-flex w-[6px] h-[6px] rounded-full bg-[#e5b927] animate-ping opacity-40" style={{ animationDuration: '2.5s', animationDelay: '1.25s' }}></span>
+      </div>
+      
+      <motion.svg 
+        width="36" 
+        height="36" 
+        viewBox="0 0 36 36" 
+        fill="none" 
+        xmlns="http://www.w3.org/2000/svg"
+        className="relative z-10"
+        animate={{
+          y: [0, -4, 0],
+          filter: [
+            "drop-shadow(0px 0px 0px rgba(229,185,39,0))",
+            "drop-shadow(0px 4px 8px rgba(229,185,39,0.3))",
+            "drop-shadow(0px 0px 0px rgba(229,185,39,0))"
+          ]
+        }}
+        transition={{
+          duration: 4,
+          ease: "easeInOut",
+          repeat: Infinity,
+        }}
+      >
+        {/* Sleek 'W' Monogram */}
+        <motion.path 
+          d="M5 6L13 28L18 16L23 28L31 6" 
+          stroke="currentColor" 
+          strokeWidth="4" 
+          strokeLinecap="round" 
+          strokeLinejoin="round" 
+          className="text-white group-hover:text-brand-gold transition-colors duration-300" 
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          transition={{
+            duration: 2.5,
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatType: "reverse",
+            repeatDelay: 0.5
+          }}
+        />
+        <motion.circle 
+          cx="18" cy="16" r="3" 
+          className="fill-brand-gold" 
+          initial={{ scale: 0 }}
+          animate={{ scale: [0, 1.2, 1] }}
+          transition={{
+            duration: 2.5,
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatType: "reverse",
+            repeatDelay: 0.5
+          }}
+        />
+      </motion.svg>
+    </div>
   );
 }
 
