@@ -5,11 +5,11 @@ import { cn } from '../utils/cn';
 import { useScrollSpy } from '../hooks/useScrollSpy';
 
 const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Blog', href: '#blog' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'About', href: '/#about' },
+  { label: 'Projects', href: '/#projects' },
+  { label: 'Experience', href: '/#experience' },
+  { label: 'Blog', href: '/#blog' },
+  { label: 'Contact', href: '/#contact' },
 ];
 
 function BrandLogo() {
@@ -81,7 +81,7 @@ function BrandLogo() {
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const activeId = useScrollSpy(navLinks.map(l => l.href.substring(1)), 100);
+  const activeId = useScrollSpy(navLinks.map(l => l.href.substring(2)), 100);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -97,14 +97,14 @@ export function Navbar() {
       isScrolled ? "bg-[#0b0b0b] border-b border-white/5 py-4" : "bg-transparent py-6"
     )}>
       <div className="max-w-[1200px] mx-auto px-6 lg:px-8 flex items-center justify-between">
-        <a href="#" className="flex items-center group">
+        <a href="/" className="flex items-center group">
           <BrandLogo />
         </a>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => {
-            const isActive = activeId === link.href.substring(1);
+            const isActive = activeId === link.href.substring(2);
             return (
               <a 
                 key={link.label} 
@@ -118,7 +118,7 @@ export function Navbar() {
               </a>
             );
           })}
-          <a href="#contact" className="px-6 py-3 bg-brand-gold text-black text-sm font-bold uppercase tracking-widest rounded hover:bg-yellow-600 transition-colors cursor-pointer">
+          <a href="/#contact" className="px-6 py-3 bg-brand-gold text-black text-sm font-bold uppercase tracking-widest rounded hover:bg-yellow-600 transition-colors cursor-pointer">
             Work With Me
           </a>
         </div>
@@ -151,7 +151,7 @@ export function Navbar() {
             </button>
             <div className="flex flex-col space-y-8 items-center text-center w-full max-w-sm">
               {navLinks.map((link) => {
-                const isActive = activeId === link.href.substring(1);
+                const isActive = activeId === link.href.substring(2);
                 return (
                   <a
                     key={link.label}
@@ -166,7 +166,7 @@ export function Navbar() {
                   </a>
                 );
               })}
-              <a href="#contact" onClick={() => setIsMobileOpen(false)} className="mt-8 px-8 py-4 w-full bg-brand-gold text-black text-xl font-bold uppercase tracking-widest rounded hover:bg-yellow-600 transition-colors">
+              <a href="/#contact" onClick={() => setIsMobileOpen(false)} className="mt-8 px-8 py-4 w-full bg-brand-gold text-black text-xl font-bold uppercase tracking-widest rounded hover:bg-yellow-600 transition-colors">
                 Work With Me
               </a>
             </div>

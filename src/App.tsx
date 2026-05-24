@@ -14,8 +14,24 @@ import { BlogPreview } from './components/BlogPreview';
 import { Newsletter } from './components/Newsletter';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { BlogPost } from './components/BlogPost';
+import { useEffect, useState } from 'react';
 
 export default function App() {
+  const [postId, setPostId] = useState<string | null>(null);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const post = params.get('post');
+    if (post) {
+      setPostId(post);
+    }
+  }, []);
+
+  if (postId) {
+    return <BlogPost postId={postId} />;
+  }
+
   return (
     <div className="min-h-screen">
       <Navbar />

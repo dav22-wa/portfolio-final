@@ -15,6 +15,92 @@ export const data = {
     linkedin: "#",
     twitter: "#",
   },
+  blog: [
+    {
+      id: "zero-to-ai",
+      category: "Personal Growth",
+      date: "May 2025",
+      title: "How I Went from Zero Coding Knowledge to Building AI Systems in 3 Years",
+      excerpt: "I did not know what a variable was in 2022. Here is exactly what changed, what I did, and what I would tell myself on day one.",
+      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
+      content: `
+When I walked into the University of Embu in September 2022, I had absolutely zero background in programming. If you had asked me what a 'variable' or a 'function' was, I wouldn't have been able to tell you. Fast forward to today, and I am building machine learning models, real-time AI audio analysis tools, and predictive applications.
+
+Here is a breakdown of that journey, the hurdles I faced, and what I would tell my day-one self.
+
+### The First Few Months: The Steep Curve
+At first, introductory programming felt like learning a completely alien language. While some of my peers already had backgrounds in tech or high school computing, I was starting from a blank slate. My strategy was simple: **outwork the confusion**.
+
+I spent countless nights in the labs, taking apart code simply to understand how it broke, and then trying to put it back together. I realized early on that reading about code isn't the same as writing it. You have to build things.
+
+### The Breakthrough: Finding My Niche in AI
+About a year in, I discovered my passion: Artificial Intelligence. I didn't want to just build static pages; I wanted to build systems that could 'think' or, at least, make intelligent inferences based on data.
+
+I started small with basic regression models in Python using \`scikit-learn\`. Then, I moved onto neural networks with \`TensorFlow\` and \`OpenCV\`. 
+One of my definitive projects was my **Potato Early Blight Detection System**. I wanted to build something that could genuinely help smallholder farmers in Kenya catch crop disease early. The moment my model successfully identified its first diseased leaf, I knew I was meant to do this.
+
+### What I Would Tell My Day-One Self
+1. **Embrace the Error Messages**: An error message isn't a sign of failure; it's the computer trying to guide you. Read them carefully.
+2. **Build for the Real World**: Don't just do tutorials. Build tools that solve problems around you, no matter how small.
+3. **Patience is a Feature**: You aren't going to understand everything immediately. Consistency compounds.
+
+It has been an incredible 3 years, and I am more excited than ever for the next chapter.
+      `
+    },
+    {
+      id: "tech-builders-kenya",
+      category: "Entrepreneurship",
+      date: "April 2025",
+      title: "Why Kenya Needs Tech Builders, Not Just Tech Employees",
+      excerpt: "Everyone is chasing a job at a big company. I think the real opportunity is building the companies everyone else wants to work at.",
+      image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=800",
+      content: `
+In Kenya's rapidly growing tech ecosystem, there is a prominent default path for computer science students: graduate, polish your leetcode skills, and try to land a job at one of the "Big Tech" branches in Nairobi. 
+
+While there is nothing wrong with employment, I believe we are missing a massive opportunity if we only prepare ourselves to be employees. Kenya needs **builders**.
+
+### The African Context
+Many of the world's leading software products were built for Western contexts. They assume high-speed, cheap internet, specific financial infrastructures, and a certain baseline of hardware. 
+
+When we only seek employment in companies that primarily serve those markets (or import those products to ours), we leave our own local problems unsolved. We have unique challenges in agriculture, logistics, healthcare, and education that require deeply contextual, homegrown tech solutions.
+
+### The Value of Building
+Building isn't just about creating a startup for funding. It's about a mindset. It implies looking at a problem—like crop diseases affecting local farmers, or the difficulty of tracking digital attendance in Kenyan universities—and deciding to write the code that fixes it.
+
+When I built a web app to replace manual attendance sheets in 2023, it wasn't to create the next unicorn. It was builder mindset. I saw a local inefficiency, and I used code to remove it.
+
+### What Needs to Change
+Universities and tech hubs need to shift the narrative from "learn to code to get hired" to "learn to code to build solutions." 
+
+We have the talent. We have the drive. We just need to aim our keyboards at the problems in our own backyards. We shouldn't just be the tech workforce of the world; we should be the architects of Africa's digital infrastructure.
+      `
+    },
+    {
+      id: "legal-chatbot",
+      category: "AI",
+      date: "March 2025",
+      title: "What Building a Legal Chatbot for Ordinary Kenyans Taught Me",
+      excerpt: "Sheria Assist started as an assignment. Then I realized how many people do not know their own rights.",
+      image: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=800",
+      content: `
+Access to justice is a luxury in many parts of the world. In Kenya, understanding the complexities of the law, navigating the bureaucracy, and knowing your basic constitutional rights can feel like an impossible task for the ordinary citizen. 
+
+This realization hit me hard when I started exploring Natural Language Processing (NLP) and Large Language Models (LLMs). The question became: *Can AI bridge the knowledge gap between the law and the citizen?*
+
+### The Birth of a Concept
+I started working on a concept called **Sheria Assist**. The idea was to create a chatbot that could take plain English (and potentially Swahili) queries about basic legal rights, tenancy agreements, or employment law, and provide accurate, understandable answers based on the Kenyan Constitution and penal code.
+
+### The Challenges of AI in Law
+Building this taught me several crucial lessons about AI safety and reliability:
+1. **Hallucination is Dangerous**: A chatbot giving a slightly wrong recipe is funny. A chatbot giving wrong legal advice can land someone in jail. I had to learn about Retrieval-Augmented Generation (RAG) to ensure the model grounded its answers strictly in legal documents.
+2. **Context is Everything**: Legal questions are rarely straightforward. "Can my landlord evict me?" depends entirely on the context of the lease, the notice given, and rent payment history. The AI needed to learn to ask clarifying questions rather than just spitting out a "Yes" or "No".
+3. **Accessibility**: A legal chatbot is useless if people can't access it. It couldn't just live on a heavy web application; it needed to be lightweight, easy to use on mobile, and ideally accessible via simple messaging platforms.
+
+### The Road Ahead
+While building safe, production-ready AI for the legal sector takes time and rigorous testing, the experiment proved something to me. AI's real power isn't in replacing lawyers; it's in democratizing access to basic legal knowledge so that the ordinary person isn't operating in the dark.
+      `
+    }
+  ],
   about: {
     heading: "From Zero to AI Developer in 3 Years",
     bio1: "I joined the University of Embu in 2022 with no programming background at all. I did not know what a variable was. Three years later, I have built machine learning models, real-time AI systems, and web applications used by actual people.",
