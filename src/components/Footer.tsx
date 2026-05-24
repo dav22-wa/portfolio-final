@@ -25,8 +25,19 @@ export function Footer() {
 
         <div className="max-w-[1200px] mx-auto px-6 lg:px-8 text-center flex flex-col items-center">
           
-          <div className="text-xl sm:text-2xl font-display font-medium text-white tracking-widest uppercase mb-8">
-            David Waihenya<span className="text-brand-gold">.</span>
+          <div className="mb-8">
+            <svg width="40" height="40" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" className="mx-auto">
+              {/* Sleek 'W' Monogram */}
+              <path 
+                d="M5 6L13 28L18 16L23 28L31 6" 
+                stroke="currentColor" 
+                strokeWidth="4" 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                className="text-white hover:text-brand-gold transition-colors duration-300" 
+              />
+              <circle cx="18" cy="16" r="3" className="fill-brand-gold" />
+            </svg>
           </div>
 
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-10 text-sm font-sans font-medium text-[#888888] tracking-wider uppercase">

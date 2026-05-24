@@ -97,9 +97,8 @@ export function Navbar() {
       isScrolled ? "bg-[#0b0b0b] border-b border-white/5 py-4" : "bg-transparent py-6"
     )}>
       <div className="max-w-[1200px] mx-auto px-6 lg:px-8 flex items-center justify-between">
-        <a href="#" className="flex items-center space-x-3 font-display font-bold text-2xl text-white tracking-tight group">
+        <a href="#" className="flex items-center group">
           <BrandLogo />
-          <span className="group-hover:text-brand-gold transition-colors uppercase tracking-widest">David Waihenya</span>
         </a>
 
         {/* Desktop Nav */}
