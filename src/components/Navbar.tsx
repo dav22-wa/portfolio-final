@@ -14,11 +14,17 @@ const navLinks = [
 
 function BrandLogo() {
   return (
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
-      {/* Custom 'DW' Monogram */}
-      <path d="M8 4V28" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-      <path d="M8 4H16C22.627 4 28 9.373 28 16C28 22.627 22.627 28 16 28H8" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-      <path d="M12 14L15 22L18 14L21 22L24 14" stroke="#e5b927" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Sleek 'W' Monogram */}
+      <path 
+        d="M5 6L13 28L18 16L23 28L31 6" 
+        stroke="currentColor" 
+        strokeWidth="4" 
+        strokeLinecap="round" 
+        strokeLinejoin="round" 
+        className="text-white group-hover:text-[#e5b927] transition-colors duration-300" 
+      />
+      <circle cx="18" cy="16" r="3" className="fill-[#e5b927]" />
     </svg>
   );
 }
