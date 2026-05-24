@@ -13,8 +13,8 @@ export function About() {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.8 }}
         >
-          <span className="section-label !text-brand-blue mb-6">MY STORY</span>
-          <h2 className="text-[3.5rem] sm:text-[4.5rem] lg:text-[5.5rem] font-display font-extrabold text-black leading-[0.95] mb-8 uppercase tracking-tight">
+          <span className="section-label !text-brand-gold mb-6">MY STORY</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-black leading-[0.95] mb-8 uppercase tracking-tight">
             I WASN'T SUPPOSED<br className="hidden sm:block"/> TO BE HERE.
           </h2>
           

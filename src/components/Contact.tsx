@@ -36,8 +36,8 @@ export function Contact() {
       <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
         
         <div className="text-center mb-16 lg:mb-20">
-          <span className="section-label !text-brand-blue mb-4">CONTACT</span>
-          <h2 className="text-[3.5rem] sm:text-[4.5rem] lg:text-[5.5rem] font-display font-extrabold text-white leading-[0.95] mb-6 uppercase tracking-tight">
+          <span className="section-label !text-brand-gold mb-4">CONTACT</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white leading-[0.95] mb-6 uppercase tracking-tight">
             LET'S BUILD SOMETHING TOGETHER.
           </h2>
           <p className="font-sans text-[#aaaaaa] text-lg sm:text-xl max-w-3xl mx-auto">
@@ -57,27 +57,27 @@ export function Contact() {
           >
             <div className="space-y-6 lg:space-y-8 mb-12">
               <div className="flex items-center text-left">
-                <span className="text-2xl lg:text-3xl mr-5">📍</span>
+                <span className="text-xl lg:text-2xl mr-5">📍</span>
                 <span className="font-sans text-white text-lg">Embu, Kenya</span>
               </div>
               <div className="flex items-center text-left">
-                <span className="text-2xl lg:text-3xl mr-5">📧</span>
-                <a href="mailto:davidwaihenya254@gmail.com" className="font-sans text-white text-lg hover:text-brand-blue transition-colors">davidwaihenya254@gmail.com</a>
+                <span className="text-xl lg:text-2xl mr-5">📧</span>
+                <a href="mailto:davidwaihenya254@gmail.com" className="font-sans text-white text-lg hover:text-brand-gold transition-colors">davidwaihenya254@gmail.com</a>
               </div>
               <div className="flex items-center text-left">
-                <span className="text-2xl lg:text-3xl mr-5">📞</span>
-                <a href="tel:+254792477722" className="font-sans text-white text-lg hover:text-brand-blue transition-colors">+254 792 477 722</a>
+                <span className="text-xl lg:text-2xl mr-5">📞</span>
+                <a href="tel:+254792477722" className="font-sans text-white text-lg hover:text-brand-gold transition-colors">+254 792 477 722</a>
               </div>
             </div>
 
             <div className="pt-8 border-t border-[#2a2d35] flex flex-wrap gap-8 items-center">
-              <a href="#" className="font-bold tracking-widest uppercase text-sm text-white hover:text-brand-blue transition-colors flex items-center">
+              <a href="#" className="font-bold tracking-widest uppercase text-sm text-white hover:text-brand-gold transition-colors flex items-center">
                 <span className="mr-2 text-xl">🐙</span> GitHub
               </a>
-              <a href="#" className="font-bold tracking-widest uppercase text-sm text-white hover:text-brand-blue transition-colors flex items-center">
+              <a href="#" className="font-bold tracking-widest uppercase text-sm text-white hover:text-brand-gold transition-colors flex items-center">
                 <span className="mr-2 text-xl">💼</span> LinkedIn
               </a>
-              <a href="#" className="font-bold tracking-widest uppercase text-sm text-white hover:text-brand-blue transition-colors flex items-center">
+              <a href="#" className="font-bold tracking-widest uppercase text-sm text-white hover:text-brand-gold transition-colors flex items-center">
                 <span className="mr-2 text-xl">🐦</span> Twitter/X
               </a>
             </div>
@@ -107,7 +107,7 @@ export function Contact() {
                   </p>
                   <button 
                     onClick={() => setStatus('idle')}
-                    className="mt-8 font-bold text-brand-blue uppercase tracking-widest text-sm hover:underline"
+                    className="mt-8 font-bold text-brand-gold uppercase tracking-widest text-sm hover:underline"
                   >
                     Send another message
                   </button>
@@ -130,7 +130,7 @@ export function Contact() {
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
                       className={cn(
                         "w-full bg-[#111318] border rounded px-4 py-4 text-white placeholder-[#555555] font-sans text-lg focus:outline-none transition-colors",
-                        errors.name ? "border-red-500 focus:border-red-500" : "border-[#2a2d35] focus:border-brand-blue hover:border-[#444]"
+                        errors.name ? "border-red-500 focus:border-red-500" : "border-[#2a2d35] focus:border-brand-gold hover:border-[#444]"
                       )}
                       placeholder="Jane Doe"
                     />
@@ -146,7 +146,7 @@ export function Contact() {
                       onChange={(e) => setFormData({...formData, email: e.target.value})}
                       className={cn(
                         "w-full bg-[#111318] border rounded px-4 py-4 text-white placeholder-[#555555] font-sans text-lg focus:outline-none transition-colors",
-                        errors.email ? "border-red-500 focus:border-red-500" : "border-[#2a2d35] focus:border-brand-blue hover:border-[#444]"
+                        errors.email ? "border-red-500 focus:border-red-500" : "border-[#2a2d35] focus:border-brand-gold hover:border-[#444]"
                       )}
                       placeholder="jane@example.com"
                     />
@@ -162,7 +162,7 @@ export function Contact() {
                       onChange={(e) => setFormData({...formData, subject: e.target.value})}
                       className={cn(
                         "w-full bg-[#111318] border rounded px-4 py-4 text-white placeholder-[#555555] font-sans text-lg focus:outline-none transition-colors",
-                        errors.subject ? "border-red-500 focus:border-red-500" : "border-[#2a2d35] focus:border-brand-blue hover:border-[#444]"
+                        errors.subject ? "border-red-500 focus:border-red-500" : "border-[#2a2d35] focus:border-brand-gold hover:border-[#444]"
                       )}
                       placeholder="Project Inquiry"
                     />
@@ -178,7 +178,7 @@ export function Contact() {
                       onChange={(e) => setFormData({...formData, message: e.target.value})}
                       className={cn(
                         "w-full bg-[#111318] border rounded px-4 py-4 text-white placeholder-[#555555] font-sans text-lg focus:outline-none transition-colors resize-y",
-                        errors.message ? "border-red-500 focus:border-red-500" : "border-[#2a2d35] focus:border-brand-blue hover:border-[#444]"
+                        errors.message ? "border-red-500 focus:border-red-500" : "border-[#2a2d35] focus:border-brand-gold hover:border-[#444]"
                       )}
                       placeholder="Hello David, I'd like to talk about..."
                     />

@@ -65,8 +65,8 @@ export function Projects() {
       <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
         
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="section-label !text-brand-blue mb-4">WHAT I'VE BUILT</span>
-          <h2 className="text-[3.5rem] sm:text-[4.5rem] lg:text-[5.5rem] font-display font-extrabold text-white leading-[0.95] mb-4 uppercase tracking-tight">
+          <span className="section-label !text-brand-gold mb-4">WHAT I'VE BUILT</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white leading-[0.95] mb-4 uppercase tracking-tight">
             THE PROJECTS.
           </h2>
           
@@ -87,7 +87,7 @@ export function Projects() {
                 {activeFilter === filter && (
                   <motion.div 
                     layoutId="project-filter-indicator"
-                    className="absolute bottom-0 left-0 right-0 h-[3px] bg-brand-blue"
+                    className="absolute bottom-0 left-0 right-0 h-[3px] bg-brand-gold"
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
                 )}
@@ -107,13 +107,13 @@ export function Projects() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4 }}
-                className="group flex flex-col bg-[#111318] p-8 lg:p-10 transition-all duration-300 relative border-l-[3px] border-l-transparent hover:border-l-brand-blue"
+                className="group flex flex-col bg-[#111318] p-8 lg:p-10 transition-all duration-300 relative border-l-[3px] border-l-transparent hover:border-l-brand-gold"
               >
                 <div className="mb-6">
-                  <div className="text-sm font-bold text-brand-blue uppercase tracking-widest mb-4">
+                  <div className="text-sm font-bold text-brand-gold uppercase tracking-widest mb-4">
                     {project.category}
                   </div>
-                  <h3 className="text-[2rem] sm:text-[2.5rem] font-display font-bold text-white uppercase leading-[1.1] tracking-tight">
+                  <h3 className="text-xl sm:text-2xl font-display font-bold text-white uppercase leading-[1.1] tracking-tight">
                     {project.title}
                   </h3>
                 </div>
@@ -135,7 +135,7 @@ export function Projects() {
                     <a 
                       key={link.label}
                       href={link.url}
-                      className="text-brand-blue font-bold tracking-widest uppercase text-sm hover:text-blue-400 transition-colors"
+                      className="text-brand-gold font-bold tracking-widest uppercase text-sm hover:text-yellow-400 transition-colors"
                     >
                       {link.label}
                     </a>

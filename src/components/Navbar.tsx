@@ -18,7 +18,7 @@ function BrandLogo() {
       {/* Custom 'DW' Monogram */}
       <path d="M8 4V28" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
       <path d="M8 4H16C22.627 4 28 9.373 28 16C28 22.627 22.627 28 16 28H8" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-      <path d="M12 14L15 22L18 14L21 22L24 14" stroke="#1e63ff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M12 14L15 22L18 14L21 22L24 14" stroke="#d4af37" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -44,7 +44,7 @@ export function Navbar() {
       <div className="max-w-[1200px] mx-auto px-6 lg:px-8 flex items-center justify-between">
         <a href="#" className="flex items-center space-x-3 font-display font-bold text-2xl text-white tracking-tight group">
           <BrandLogo />
-          <span className="group-hover:text-brand-blue transition-colors uppercase tracking-widest">David Waihenya</span>
+          <span className="group-hover:text-brand-gold transition-colors uppercase tracking-widest">David Waihenya</span>
         </a>
 
         {/* Desktop Nav */}
@@ -57,21 +57,21 @@ export function Navbar() {
                 href={link.href}
                 className={cn(
                   "text-sm font-bold uppercase tracking-widest transition-all duration-200 relative py-2",
-                  isActive ? "text-brand-blue" : "text-white hover:text-brand-blue"
+                  isActive ? "text-brand-gold" : "text-white hover:text-brand-gold"
                 )}
               >
                 {link.label}
               </a>
             );
           })}
-          <a href="#contact" className="px-6 py-3 bg-brand-blue text-white text-sm font-bold uppercase tracking-widest rounded hover:bg-blue-600 transition-colors cursor-pointer">
+          <a href="#contact" className="px-6 py-3 bg-brand-gold text-black text-sm font-bold uppercase tracking-widest rounded hover:bg-yellow-600 transition-colors cursor-pointer">
             Work With Me
           </a>
         </div>
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden text-white hover:text-brand-blue p-2 -mr-2"
+          className="md:hidden text-white hover:text-brand-gold p-2 -mr-2"
           onClick={() => setIsMobileOpen(true)}
           aria-label="Open menu"
         >
@@ -89,7 +89,7 @@ export function Navbar() {
             className="fixed inset-0 z-50 bg-[#0b0b0b] flex flex-col pt-24 px-6 items-center justify-center"
           >
             <button 
-              className="absolute top-6 right-6 text-white hover:text-brand-blue p-2"
+              className="absolute top-6 right-6 text-white hover:text-brand-gold p-2"
               onClick={() => setIsMobileOpen(false)}
               aria-label="Close menu"
             >
@@ -105,14 +105,14 @@ export function Navbar() {
                     onClick={() => setIsMobileOpen(false)}
                     className={cn(
                       "text-3xl font-display font-bold uppercase tracking-widest transition-colors w-full pb-4 border-b border-white/10",
-                      isActive ? "text-brand-blue" : "text-white hover:text-brand-blue"
+                      isActive ? "text-brand-gold" : "text-white hover:text-brand-gold"
                     )}
                   >
                     {link.label}
                   </a>
                 );
               })}
-              <a href="#contact" onClick={() => setIsMobileOpen(false)} className="mt-8 px-8 py-4 w-full bg-brand-blue text-white text-xl font-bold uppercase tracking-widest rounded hover:bg-blue-600 transition-colors">
+              <a href="#contact" onClick={() => setIsMobileOpen(false)} className="mt-8 px-8 py-4 w-full bg-brand-gold text-black text-xl font-bold uppercase tracking-widest rounded hover:bg-yellow-600 transition-colors">
                 Work With Me
               </a>
             </div>

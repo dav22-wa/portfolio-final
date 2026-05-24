@@ -12,7 +12,7 @@ Before you push this site to the public, walk through these final steps:
 - [ ] **Item 3:** Run Lighthouse in Chrome DevTools — target 90+ on Performance, Accessibility, and SEO.
 - [ ] **Item 4:** Test on mobile screen sizes (e.g., iPhone SE 375px and Samsung Galaxy 412px) to guarantee flawless responsive behaviors.
 - [ ] **Item 5:** Add a real Google Analytics tag or Plausible Analytics snippet in the `<head>` of `index.html` for visitor tracking.
-- [ ] **Item 6:** Double check that your blue accent color (`#1e63ff` or `#004de6`) has sufficient WCAG AA contrast against the dark `#0b0b0b` backgrounds.
+- [ ] **Item 6:** Double check that your gold accent color (`#1e63ff` or `#004de6`) has sufficient WCAG AA contrast against the dark `#0b0b0b` backgrounds.
 
 ## GitHub Pages Deployment Guide
 

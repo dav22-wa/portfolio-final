@@ -3,7 +3,7 @@
 @theme {
   --color-brand-bg: #0b0b0b;
   --color-brand-surface: #111318;
-  --color-brand-blue: #1e63ff;
+  --color-brand-gold: #d4af37;
   --color-brand-text: #f5f5f5;
   --color-brand-muted: #888888;
   --color-brand-surface-hover: #1c1f26;
@@ -28,15 +28,15 @@
 
 @layer components {
   .section-label {
-    @apply uppercase tracking-widest text-sm font-bold text-brand-blue mb-3 block;
+    @apply uppercase tracking-widest text-sm font-bold text-brand-gold mb-3 block;
   }
   
   .btn-primary {
-    @apply inline-flex items-center justify-center px-8 py-3.5 bg-brand-blue text-white font-medium rounded hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-offset-2;
+    @apply inline-flex items-center justify-center px-8 py-3.5 bg-brand-gold text-black font-bold rounded hover:bg-yellow-600 transition-colors shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-offset-2;
   }
   
   .btn-outline {
-    @apply inline-flex items-center justify-center px-8 py-3.5 border border-white text-white font-medium rounded hover:bg-white/5 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-offset-2;
+    @apply inline-flex items-center justify-center px-8 py-3.5 border border-white text-white font-medium rounded hover:bg-white/5 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-offset-2;
   }
 }
 
@@ -51,5 +51,5 @@
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-brand-blue);
+  background: var(--color-brand-gold);
 }

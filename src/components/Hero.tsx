@@ -48,7 +48,7 @@ export function Hero() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="h-8 mb-6 font-display font-medium text-[20px] text-brand-blue tracking-wide flex items-center">
+          <div className="h-8 mb-6 font-display font-medium text-[20px] text-brand-gold tracking-wide flex items-center">
             <span>{text}</span>
             <motion.span 
               animate={{ opacity: [1, 0] }} 
@@ -59,7 +59,7 @@ export function Hero() {
             </motion.span>
           </div>
           
-          <h1 className="font-display font-extrabold text-7xl sm:text-8xl lg:text-9xl text-white leading-[0.95] mb-6 uppercase tracking-tight">
+          <h1 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white leading-[0.95] mb-6 uppercase tracking-tight">
             BUILDING AI<br/>
             SYSTEMS THAT<br/>
             MATTER.

@@ -30,8 +30,8 @@ export function BlogPreview() {
       <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
         
         <div className="text-center max-w-4xl mx-auto mb-16 lg:mb-20">
-          <span className="section-label !text-brand-blue mb-4">READ THE BLOG</span>
-          <h2 className="text-[3.5rem] sm:text-[4.5rem] lg:text-[5.5rem] font-display font-extrabold text-[#111111] leading-[0.95] uppercase tracking-tight">
+          <span className="section-label !text-brand-gold mb-4">READ THE BLOG</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-[#111111] leading-[0.95] uppercase tracking-tight">
             THOUGHTS ON AI, BUILDING, AND GROWING IN AFRICA.
           </h2>
         </div>
@@ -47,7 +47,7 @@ export function BlogPreview() {
               className="flex flex-col bg-white border border-[#e5e5e5] p-8 group cursor-pointer hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
             >
               <div className="flex justify-between items-center mb-6">
-                <span className="text-[13px] font-bold text-brand-blue uppercase tracking-widest">
+                <span className="text-[13px] font-bold text-brand-gold uppercase tracking-widest">
                   {post.category}
                 </span>
                 <span className="text-[13px] font-sans text-[#888888] uppercase tracking-widest font-bold">
@@ -55,7 +55,7 @@ export function BlogPreview() {
                 </span>
               </div>
               
-              <h3 className="text-[2rem] lg:text-[2.2rem] font-display font-bold text-[#111111] leading-[1.1] uppercase tracking-tight mb-4 group-hover:text-brand-blue transition-colors duration-300">
+              <h3 className="text-xl lg:text-2xl font-display font-bold text-[#111111] leading-[1.1] uppercase tracking-tight mb-4 group-hover:text-brand-gold transition-colors duration-300">
                 {post.title}
               </h3>
               
@@ -64,7 +64,7 @@ export function BlogPreview() {
               </p>
               
               <div className="mt-auto">
-                <a href={post.link} className="text-brand-blue font-bold uppercase tracking-widest text-sm transition-colors flex items-center">
+                <a href={post.link} className="text-brand-gold font-bold uppercase tracking-widest text-sm transition-colors flex items-center">
                   Read More <span className="ml-2 text-lg">→</span>
                 </a>
               </div>

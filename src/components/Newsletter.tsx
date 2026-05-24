@@ -24,8 +24,8 @@ export function Newsletter() {
           transition={{ duration: 0.7 }}
           className="max-w-4xl mx-auto"
         >
-          <span className="section-label !text-brand-blue mb-6">STAY CONNECTED</span>
-          <h2 className="text-[3.5rem] sm:text-[4.5rem] lg:text-[5.5rem] font-display font-extrabold text-white leading-[0.95] mb-6 uppercase tracking-tight">
+          <span className="section-label !text-brand-gold mb-6">STAY CONNECTED</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white leading-[0.95] mb-6 uppercase tracking-tight">
             THE WEEKLY EMAIL THAT KEEPS YOU BUILDING.
           </h2>
           <p className="font-sans text-[#aaaaaa] text-lg sm:text-xl mb-12">
@@ -48,7 +48,7 @@ export function Newsletter() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="flex-grow bg-[#111318] border border-white placeholder-white text-white font-sans text-lg px-6 py-4 rounded focus:outline-none focus:ring-2 focus:ring-brand-blue sm:rounded-r-none"
+                className="flex-grow bg-[#111318] border border-white placeholder-white text-white font-sans text-lg px-6 py-4 rounded focus:outline-none focus:ring-2 focus:ring-brand-gold sm:rounded-r-none"
               />
               <button type="submit" className="btn-primary rounded font-bold text-lg whitespace-nowrap px-8 sm:rounded-l-none uppercase tracking-widest">
                 JOIN THE LIST
