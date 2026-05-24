@@ -3,10 +3,9 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
-import workerSrc from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
 import { X, ChevronLeft, ChevronRight, Loader2 } from 'lucide-react';
 
-pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
+pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
 interface CVModalProps {
   isOpen: boolean;
@@ -55,7 +54,7 @@ export function CVModal({ isOpen, onClose }: CVModalProps) {
             {/* Document Viewer */}
             <div className="flex-1 overflow-auto bg-[#1a1c23] p-4 flex justify-center custom-scrollbar">
               <Document
-                file="/david-waihenya-cv.pdf"
+                file="/david-waihenya-resume.pdf"
                 onLoadSuccess={onDocumentLoadSuccess}
                 loading={
                   <div className="flex flex-col items-center justify-center h-64 text-brand-gold">
@@ -67,7 +66,7 @@ export function CVModal({ isOpen, onClose }: CVModalProps) {
                   <div className="flex flex-col items-center justify-center h-64 text-red-400">
                     <p className="text-sm font-medium tracking-widest uppercase mb-2">Failed to load CV</p>
                     <p className="text-xs opacity-70 text-center max-w-sm">
-                      Please make sure you have uploaded "david-waihenya-cv.pdf" into the public folder.
+                      Please make sure your CV is uploaded correctly.
                     </p>
                   </div>
                 }
