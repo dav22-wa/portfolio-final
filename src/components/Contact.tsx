@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '../utils/cn';
+import { Github, Linkedin, Twitter, Facebook } from 'lucide-react';
 
 export function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
@@ -55,6 +56,14 @@ export function Contact() {
             transition={{ duration: 0.6 }}
             className="flex flex-col justify-center"
           >
+            <div className="w-full max-w-sm mb-12 overflow-hidden rounded-xl border border-[#2a2d35] shadow-2xl">
+              <img 
+                src="/assets/contact.jpeg" 
+                alt="David Waihenya Contact" 
+                className="w-full h-auto object-cover object-center transition-all duration-700 hover:scale-105"
+              />
+            </div>
+
             <div className="space-y-6 lg:space-y-8 mb-12">
               <div className="flex items-center text-left">
                 <span className="text-xl lg:text-2xl mr-5">📍</span>
@@ -71,14 +80,17 @@ export function Contact() {
             </div>
 
             <div className="pt-8 border-t border-[#2a2d35] flex flex-wrap gap-8 items-center">
-              <a href="#" className="font-bold tracking-widest uppercase text-sm text-white hover:text-brand-gold transition-colors flex items-center">
-                <span className="mr-2 text-xl">🐙</span> GitHub
+              <a href="https://github.com/dav22-wa" target="_blank" rel="noopener noreferrer" className="font-bold tracking-widest uppercase text-sm text-[#aaaaaa] hover:text-brand-gold transition-colors flex items-center">
+                <Github className="mr-2 w-5 h-5 stroke-[1.5]" /> GitHub
               </a>
-              <a href="#" className="font-bold tracking-widest uppercase text-sm text-white hover:text-brand-gold transition-colors flex items-center">
-                <span className="mr-2 text-xl">💼</span> LinkedIn
+              <a href="https://www.linkedin.com/in/david-waihenya" target="_blank" rel="noopener noreferrer" className="font-bold tracking-widest uppercase text-sm text-[#aaaaaa] hover:text-brand-gold transition-colors flex items-center">
+                <Linkedin className="mr-2 w-5 h-5 stroke-[1.5]" /> LinkedIn
               </a>
-              <a href="#" className="font-bold tracking-widest uppercase text-sm text-white hover:text-brand-gold transition-colors flex items-center">
-                <span className="mr-2 text-xl">🐦</span> Twitter/X
+              <a href="https://x.com/waihenya_david" target="_blank" rel="noopener noreferrer" className="font-bold tracking-widest uppercase text-sm text-[#aaaaaa] hover:text-brand-gold transition-colors flex items-center">
+                <Twitter className="mr-2 w-5 h-5 stroke-[1.5]" /> Twitter
+              </a>
+              <a href="https://www.facebook.com/david.waihenya.2025/" target="_blank" rel="noopener noreferrer" className="font-bold tracking-widest uppercase text-sm text-[#aaaaaa] hover:text-brand-gold transition-colors flex items-center">
+                <Facebook className="mr-2 w-5 h-5 stroke-[1.5]" /> Facebook
               </a>
             </div>
           </motion.div>

@@ -51,17 +51,17 @@ export function About() {
 
         {/* Right Column (Photo) */}
         <motion.div 
-          className="lg:w-[45%] w-full min-h-[50vh] lg:min-h-[800px] relative overflow-hidden"
+          className="lg:w-[45%] w-full flex items-center justify-center relative overflow-hidden p-6 lg:p-12"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.2 }}
         >
-          <div className="story-photo w-full h-full bg-[#111318] flex items-center justify-center relative min-h-[50vh] lg:min-h-[800px]">
-            <span className="font-display font-bold text-4xl text-white/10 uppercase tracking-widest absolute text-center px-4">
-              PHOTO PLACEHOLDER
-            </span>
-          </div>
+          <img 
+            src="/assets/about.jpeg" 
+            alt="David Waihenya Working" 
+            className="w-full max-h-[80vh] object-contain rounded-xl shadow-xl transition-all duration-700"
+          />
         </motion.div>
 
       </div>

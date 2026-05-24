@@ -105,9 +105,13 @@ export function Hero() {
           {/* Background Gradient fade for the bottom on mobile */}
           <div className="block lg:hidden absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#0b0b0b] to-transparent z-10"></div>
 
-          {/* Real Photo Placeholder */}
-          <div className="hero-photo w-full h-full bg-[#111318] flex items-center justify-center relative">
-             <span className="font-display font-medium text-4xl text-white/10 absolute">PHOTO PLACEHOLDER</span>
+          {/* Real Photo */}
+          <div className="w-full h-full relative bg-[#111318]">
+            <img 
+              src="/assets/hero.jpeg" 
+              alt="David Waihenya" 
+              className="w-full h-full object-cover object-center transition-all duration-700"
+            />
           </div>
         </motion.div>
 

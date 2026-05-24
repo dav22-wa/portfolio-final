@@ -18,7 +18,7 @@ function BrandLogo() {
       {/* Custom 'DW' Monogram */}
       <path d="M8 4V28" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
       <path d="M8 4H16C22.627 4 28 9.373 28 16C28 22.627 22.627 28 16 28H8" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-      <path d="M12 14L15 22L18 14L21 22L24 14" stroke="#d4af37" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M12 14L15 22L18 14L21 22L24 14" stroke="#e5b927" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
