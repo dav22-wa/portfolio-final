@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { cn } from '../utils/cn';
+import { CVModal } from './CVModal';
 
 const titles = [
   "AI & Machine Learning Developer",
@@ -13,6 +14,7 @@ export function Hero() {
   const [text, setText] = useState('');
   const [phase, setPhase] = useState<'typing' | 'pausing' | 'deleting'>('typing');
   const [index, setIndex] = useState(0);
+  const [isCVModalOpen, setIsCVModalOpen] = useState(false);
 
   useEffect(() => {
     let timeout: ReturnType<typeof setTimeout>;
@@ -76,14 +78,12 @@ export function Hero() {
             >
               SEE MY WORK
             </a>
-            <a 
-              href="/david-waihenya-cv.pdf" 
+            <button 
+              onClick={() => setIsCVModalOpen(true)}
               className="btn-outline"
-              target="_blank"
-              rel="noopener noreferrer"
             >
-              DOWNLOAD CV
-            </a>
+              VIEW FULL CV
+            </button>
           </div>
 
           <div className="flex items-center flex-wrap gap-4 text-sm font-medium text-white/50">
@@ -117,6 +117,8 @@ export function Hero() {
         </motion.div>
 
       </div>
+
+      <CVModal isOpen={isCVModalOpen} onClose={() => setIsCVModalOpen(false)} />
     </section>
   );
 }
