@@ -4,9 +4,10 @@ import { cn } from '../utils/cn';
 import { CVModal } from './CVModal';
 
 const titles = [
+  "Lead Developer @ AI Solution Studio",
   "AI & Machine Learning Developer",
-  "Cybersecurity Enthusiast",
   "Mozilla Challenge Winner 2024",
+  "Cybersecurity Enthusiast",
   "CS Student · University of Embu, Kenya"
 ];
 
@@ -77,6 +78,12 @@ export function Hero() {
               className="btn-primary"
             >
               SEE MY WORK
+            </a>
+            <a 
+              href="#what-i-do" 
+              className="btn-outline !text-brand-gold !border-brand-gold/60 hover:!border-brand-gold hover:bg-brand-gold/10 flex items-center justify-center gap-1.5"
+            >
+              WHAT I DO <span>↓</span>
             </a>
             <button 
               onClick={() => setIsCVModalOpen(true)}

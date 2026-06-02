@@ -6,6 +6,24 @@ const filters = ["All", "AI & ML", "Web", "Cybersecurity"];
 
 const projects = [
   {
+    category: "AI & ML · Web",
+    title: "AI Solution Studio",
+    stack: ["React", "AI Integrations", "Vite", "Active Studio"],
+    description: "An advanced, interactive platform showcasing state-of-the-art AI-powered user interfaces, systems, and product solutions built for real-world impact and business automation.",
+    links: [
+      { label: "Visit Live Studio ↗", url: "https://ai-solution-studio.vercel.app/" }
+    ]
+  },
+  {
+    category: "Web · Full-Stack",
+    title: "Davamos Tech",
+    stack: ["React", "Custom Cloud", "Node.js", "Bespoke Agency"],
+    description: "A premier custom software engineering and tech agency crafting blazing-fast web platforms, bespoke mobile systems, and scalable enterprise server/database architectures.",
+    links: [
+      { label: "Visit Davamos Tech ↗", url: "https://davamos.vercel.app/" }
+    ]
+  },
+  {
     category: "AI & ML",
     title: "Potato Early Blight Detection System",
     stack: ["Python", "TensorFlow", "OpenCV", "January 2026"],

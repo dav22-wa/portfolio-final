@@ -4,8 +4,9 @@ import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '../utils/cn';
 import { useScrollSpy } from '../hooks/useScrollSpy';
 
-const navLinks = [
+const navLinks: { label: string; href: string; external?: boolean }[] = [
   { label: 'About', href: '/#about' },
+  { label: 'What I Do', href: '/#what-i-do' },
   { label: 'Projects', href: '/#projects' },
   { label: 'Experience', href: '/#experience' },
   { label: 'Blog', href: '/#blog' },
@@ -81,7 +82,7 @@ function BrandLogo() {
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const activeId = useScrollSpy(navLinks.map(l => l.href.substring(2)), 100);
+  const activeId = useScrollSpy(navLinks.filter(l => !l.external).map(l => l.href.substring(2)), 100);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -104,17 +105,24 @@ export function Navbar() {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => {
-            const isActive = activeId === link.href.substring(2);
+            const isActive = !link.external && activeId === link.href.substring(2);
             return (
               <a 
                 key={link.label} 
                 href={link.href}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
                 className={cn(
                   "text-sm font-bold uppercase tracking-widest transition-all duration-200 relative py-2",
-                  isActive ? "text-brand-gold" : "text-white hover:text-brand-gold"
+                  link.external 
+                    ? "text-brand-gold animate-pulse hover:text-white hover:scale-105" 
+                    : isActive 
+                      ? "text-brand-gold" 
+                      : "text-white hover:text-brand-gold"
                 )}
               >
                 {link.label}
+                {link.external && <span className="text-[10px] ml-1 align-super">↗</span>}
               </a>
             );
           })}
@@ -151,18 +159,25 @@ export function Navbar() {
             </button>
             <div className="flex flex-col space-y-8 items-center text-center w-full max-w-sm">
               {navLinks.map((link) => {
-                const isActive = activeId === link.href.substring(2);
+                const isActive = !link.external && activeId === link.href.substring(2);
                 return (
                   <a
                     key={link.label}
                     href={link.href}
                     onClick={() => setIsMobileOpen(false)}
+                    target={link.external ? "_blank" : undefined}
+                    rel={link.external ? "noopener noreferrer" : undefined}
                     className={cn(
                       "text-3xl font-display font-bold uppercase tracking-widest transition-colors w-full pb-4 border-b border-white/10",
-                      isActive ? "text-brand-gold" : "text-white hover:text-brand-gold"
+                      link.external 
+                        ? "text-brand-gold" 
+                        : isActive 
+                          ? "text-brand-gold" 
+                          : "text-white hover:text-brand-gold"
                     )}
                   >
                     {link.label}
+                    {link.external && <span className="text-xl ml-1">↗</span>}
                   </a>
                 );
               })}

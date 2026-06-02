@@ -127,6 +127,22 @@ While building safe, production-ready AI for the legal sector takes time and rig
   },
   projects: [
     {
+      name: "AI Solution Studio",
+      tags: ["AI & ML", "Web"],
+      stack: ["React", "AI Integrations", "Vite", "Active Studio"],
+      date: "Active Project",
+      description: "An advanced, interactive platform showcasing state-of-the-art AI-powered user interfaces, systems, and product solutions built for real-world impact and business automation.",
+      links: [{ label: "Visit Live Studio ↗", url: "https://ai-solution-studio.vercel.app/" }]
+    },
+    {
+      name: "Davamos Tech",
+      tags: ["Web"],
+      stack: ["React", "Custom Cloud", "Node.js", "Bespoke Agency"],
+      date: "Active Venture",
+      description: "A premier custom software engineering and tech agency crafting blazing-fast web platforms, bespoke mobile systems, and scalable enterprise server/database architectures.",
+      links: [{ label: "Visit Davamos Tech ↗", url: "https://davamos.vercel.app/" }]
+    },
+    {
       name: "Potato Early Blight Detection System",
       tags: ["AI & ML"],
       stack: ["Python", "TensorFlow", "OpenCV"],

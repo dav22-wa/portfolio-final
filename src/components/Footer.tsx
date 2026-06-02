@@ -42,6 +42,7 @@ export function Footer() {
 
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-10 text-sm font-sans font-medium text-[#888888] tracking-wider uppercase">
             <a href="#about" className="hover:text-brand-gold transition-colors">About</a>
+            <a href="#what-i-do" className="hover:text-brand-gold text-brand-gold font-bold transition-colors">What I Do</a>
             <a href="#projects" className="hover:text-brand-gold transition-colors">Projects</a>
             <a href="#background" className="hover:text-brand-gold transition-colors">Experience</a>
             <a href="#blog" className="hover:text-brand-gold transition-colors">Blog</a>

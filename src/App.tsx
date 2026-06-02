@@ -6,6 +6,7 @@
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
+import { WhatIDo } from './components/WhatIDo';
 import { Skills } from './components/Skills';
 import { Projects } from './components/Projects';
 import { Background } from './components/Background';
@@ -38,6 +39,7 @@ export default function App() {
       <main id="main">
         <Hero />
         <About />
+        <WhatIDo />
         <Skills />
         <Projects />
         <Background />
