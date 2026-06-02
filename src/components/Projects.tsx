@@ -125,35 +125,35 @@ export function Projects() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4 }}
-                className="group flex flex-col bg-[#111318] p-8 lg:p-10 transition-all duration-300 relative border-l-[3px] border-l-transparent hover:border-l-brand-gold"
+                className="group flex flex-col bg-[#111318] p-8 lg:p-10 transition-all duration-300 relative border-2 border-white/5 hover:border-[#e5b927]/60 shadow-[8px_8px_0_0_rgba(229,185,39,0.02)] hover:shadow-[12px_12px_0_0_rgba(229,185,39,0.06)] rounded-sm"
               >
                 <div className="mb-6">
-                  <div className="text-sm font-bold text-brand-gold uppercase tracking-widest mb-4">
+                  <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-3">
                     {project.category}
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-display font-bold text-white uppercase leading-[1.1] tracking-tight">
+                  <h3 className="text-2xl sm:text-3xl font-display font-extrabold text-white uppercase tracking-tighter leading-none group-hover:text-[#e5b927] transition-colors mb-2">
                     {project.title}
                   </h3>
                 </div>
                 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.stack.map((tech, idx) => (
-                    <span key={idx} className="text-[13px] font-sans font-medium text-white bg-[#1e1e2e] px-3 py-1 rounded-sm">
+                    <span key={idx} className="text-[11px] font-mono font-bold text-white bg-[#09090b] border border-white/5 px-2.5 py-1 rounded-sm">
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <p className="font-sans text-[#aaaaaa] text-[15px] leading-relaxed mb-8 flex-grow">
+                <p className="font-sans text-stone-400 text-xs sm:text-sm leading-relaxed mb-8 flex-grow">
                   {project.description}
                 </p>
                 
-                <div className="mt-auto flex flex-wrap gap-6 pt-6">
+                <div className="mt-auto flex flex-wrap gap-4 pt-4 border-t border-white/5">
                   {project.links.map(link => (
                     <a 
                       key={link.label}
                       href={link.url}
-                      className="text-brand-gold font-bold tracking-widest uppercase text-sm hover:text-yellow-400 transition-colors"
+                      className="inline-flex items-center gap-1 border border-[#e5b927]/20 hover:border-[#e5b927] bg-[#e5b927]/5 hover:bg-[#e5b927] text-[#e5b927] hover:text-black font-extrabold tracking-widest uppercase text-[10px] sm:text-xs py-2 px-4 rounded-sm transition-all"
                     >
                       {link.label}
                     </a>

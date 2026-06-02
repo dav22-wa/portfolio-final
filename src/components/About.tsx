@@ -43,25 +43,30 @@ export function About() {
           </div>
 
           <div className="mt-12">
-            <a href="#projects" className="btn-primary uppercase font-bold tracking-widest text-[14px]">
+            <a 
+              href="#projects" 
+              className="px-8 py-3.5 bg-[#e5b927] text-black font-extrabold border-2 border-black tracking-widest hover:bg-black hover:text-white hover:border-[#e5b927] transition-all cursor-pointer text-xs uppercase inline-block text-center rounded-sm shadow-[4px_4px_0_0_rgba(17,19,24,1)] hover:shadow-none"
+            >
               SEE MY PROJECTS
             </a>
           </div>
         </motion.div>
 
-        {/* Right Column (Photo) */}
+        {/* Right Column (Photo Details) */}
         <motion.div 
-          className="lg:w-[45%] w-full flex items-center justify-center relative overflow-hidden p-6 lg:p-12"
+          className="lg:w-[45%] w-full flex items-center justify-center relative overflow-hidden p-8 lg:p-16 bg-zinc-50"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.2 }}
         >
-          <img 
-            src="/assets/about.jpeg" 
-            alt="David Waihenya Working" 
-            className="w-full max-h-[80vh] object-contain rounded-xl shadow-xl transition-all duration-700"
-          />
+          <div className="relative border-4 border-black shadow-[16px_16px_0_0_rgba(229,185,39,1)] rounded-sm overflow-hidden w-full max-w-[400px] aspect-[4/5] bg-brand-surface">
+            <img 
+              src="/assets/about.jpeg" 
+              alt="David Waihenya Working" 
+              className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
+            />
+          </div>
         </motion.div>
 
       </div>

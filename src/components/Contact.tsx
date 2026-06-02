@@ -56,41 +56,41 @@ export function Contact() {
             transition={{ duration: 0.6 }}
             className="flex flex-col justify-center"
           >
-            <div className="w-full max-w-sm mb-12 overflow-hidden rounded-xl border border-[#2a2d35] shadow-2xl">
+            <div className="relative border-4 border-black shadow-[12px_12px_0_0_rgba(229,185,39,1)] rounded-sm overflow-hidden w-full max-w-[320px] aspect-[4/5] bg-brand-surface mb-12 group">
               <img 
                 src="/assets/contact.jpeg" 
                 alt="David Waihenya Contact" 
-                className="w-full h-auto object-cover object-center transition-all duration-700 hover:scale-105"
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 hover:scale-105"
               />
             </div>
 
             <div className="space-y-6 lg:space-y-8 mb-12">
               <div className="flex items-center text-left">
-                <span className="text-xl lg:text-2xl mr-5">📍</span>
-                <span className="font-sans text-white text-lg">Embu, Kenya</span>
+                <span className="w-10 h-10 bg-white/5 border border-white/10 flex items-center justify-center rounded-sm mr-5 text-xl">📍</span>
+                <span className="font-sans text-white text-md">Embu, Kenya</span>
               </div>
               <div className="flex items-center text-left">
-                <span className="text-xl lg:text-2xl mr-5">📧</span>
-                <a href="mailto:davidwaihenya254@gmail.com" className="font-sans text-white text-lg hover:text-brand-gold transition-colors">davidwaihenya254@gmail.com</a>
+                <span className="w-10 h-10 bg-white/5 border border-white/10 flex items-center justify-center rounded-sm mr-5 text-xl">📧</span>
+                <a href="mailto:davidwaihenya254@gmail.com" className="font-sans text-white text-md hover:text-[#e5b927] transition-colors">davidwaihenya254@gmail.com</a>
               </div>
               <div className="flex items-center text-left">
-                <span className="text-xl lg:text-2xl mr-5">📞</span>
-                <a href="tel:+254792477722" className="font-sans text-white text-lg hover:text-brand-gold transition-colors">+254 792 477 722</a>
+                <span className="w-10 h-10 bg-white/5 border border-white/10 flex items-center justify-center rounded-sm mr-5 text-xl">📞</span>
+                <a href="tel:+254792477722" className="font-sans text-white text-md hover:text-[#e5b927] transition-colors">+254 792 477 722</a>
               </div>
             </div>
 
-            <div className="pt-8 border-t border-[#2a2d35] flex flex-wrap gap-8 items-center">
-              <a href="https://github.com/dav22-wa" target="_blank" rel="noopener noreferrer" className="font-bold tracking-widest uppercase text-sm text-[#aaaaaa] hover:text-brand-gold transition-colors flex items-center">
-                <Github className="mr-2 w-5 h-5 stroke-[1.5]" /> GitHub
+            <div className="pt-8 border-t border-white/10 flex flex-wrap gap-6 items-center">
+              <a href="https://github.com/dav22-wa" target="_blank" rel="noopener noreferrer" className="font-bold tracking-widest uppercase text-xs text-stone-400 hover:text-[#e5b927] transition-colors flex items-center">
+                <Github className="mr-2 w-4 h-4 stroke-[1.5]" /> GitHub
               </a>
-              <a href="https://www.linkedin.com/in/david-waihenya" target="_blank" rel="noopener noreferrer" className="font-bold tracking-widest uppercase text-sm text-[#aaaaaa] hover:text-brand-gold transition-colors flex items-center">
-                <Linkedin className="mr-2 w-5 h-5 stroke-[1.5]" /> LinkedIn
+              <a href="https://www.linkedin.com/in/david-waihenya" target="_blank" rel="noopener noreferrer" className="font-bold tracking-widest uppercase text-xs text-stone-400 hover:text-[#e5b927] transition-colors flex items-center">
+                <Linkedin className="mr-2 w-4 h-4 stroke-[1.5]" /> LinkedIn
               </a>
-              <a href="https://x.com/waihenya_david" target="_blank" rel="noopener noreferrer" className="font-bold tracking-widest uppercase text-sm text-[#aaaaaa] hover:text-brand-gold transition-colors flex items-center">
-                <Twitter className="mr-2 w-5 h-5 stroke-[1.5]" /> Twitter
+              <a href="https://x.com/waihenya_david" target="_blank" rel="noopener noreferrer" className="font-bold tracking-widest uppercase text-xs text-stone-400 hover:text-[#e5b927] transition-colors flex items-center">
+                <Twitter className="mr-2 w-4 h-4 stroke-[1.5]" /> Twitter
               </a>
-              <a href="https://www.facebook.com/david.waihenya.2025/" target="_blank" rel="noopener noreferrer" className="font-bold tracking-widest uppercase text-sm text-[#aaaaaa] hover:text-brand-gold transition-colors flex items-center">
-                <Facebook className="mr-2 w-5 h-5 stroke-[1.5]" /> Facebook
+              <a href="https://www.facebook.com/david.waihenya.2025/" target="_blank" rel="noopener noreferrer" className="font-bold tracking-widest uppercase text-xs text-stone-400 hover:text-[#e5b927] transition-colors flex items-center">
+                <Facebook className="mr-2 w-4 h-4 stroke-[1.5]" /> Facebook
               </a>
             </div>
           </motion.div>
@@ -108,18 +108,18 @@ export function Contact() {
                   key="success"
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="h-full min-h-[400px] flex flex-col items-center justify-center text-center p-8 bg-[#111318] border border-white/5"
+                  className="h-full min-h-[400px] flex flex-col items-center justify-center text-center p-8 bg-[#111318] border-2 border-[#e5b927] shadow-[10px_10px_0_0_rgba(229,185,39,0.15)] rounded-sm"
                 >
-                  <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center text-[#111318] mb-6">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <div className="w-16 h-16 rounded-full bg-[#e5b927] flex items-center justify-center text-black mb-6">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   </div>
-                  <h3 className="font-display font-bold text-3xl uppercase tracking-tight text-white mb-4">Message sent.</h3>
-                  <p className="font-sans text-[#aaaaaa] text-lg">
-                    I will get back to you within 48 hours.
+                  <h3 className="font-display font-bold text-2xl uppercase tracking-widest text-[#e5b927] mb-2">Message Broadcast Saved!</h3>
+                  <p className="font-sans text-[#aaaaaa] text-sm">
+                    Strategic contact request recorded. Expect response within 24 hours.
                   </p>
                   <button 
                     onClick={() => setStatus('idle')}
-                    className="mt-8 font-bold text-brand-gold uppercase tracking-widest text-sm hover:underline"
+                    className="mt-8 font-bold text-white uppercase tracking-widest text-xs hover:text-[#e5b927] transition-colors"
                   >
                     Send another message
                   </button>
@@ -134,74 +134,78 @@ export function Contact() {
                   className="space-y-6"
                 >
                   <div>
-                    <label htmlFor="name" className="block text-sm font-bold text-white uppercase tracking-wider mb-2">Full Name</label>
+                    <label htmlFor="name" className="block text-xs font-extrabold text-white uppercase tracking-widest mb-2">Full Name</label>
                     <input 
                       type="text" 
                       id="name"
+                      required
                       value={formData.name}
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
                       className={cn(
-                        "w-full bg-[#111318] border rounded px-4 py-4 text-white placeholder-[#555555] font-sans text-lg focus:outline-none transition-colors",
-                        errors.name ? "border-red-500 focus:border-red-500" : "border-[#2a2d35] focus:border-brand-gold hover:border-[#444]"
+                        "w-full bg-[#111318] border-2 rounded-sm px-4 py-3 text-white placeholder-stone-600 font-sans text-sm focus:outline-none transition-colors",
+                        errors.name ? "border-red-500 focus:border-red-500" : "border-white/5 focus:border-[#e5b927] hover:border-white/10"
                       )}
                       placeholder="Jane Doe"
                     />
-                    {errors.name && <p className="text-red-500 text-sm font-bold mt-2">{errors.name}</p>}
+                    {errors.name && <p className="text-red-500 text-xs font-bold mt-2 font-mono uppercase">{errors.name}</p>}
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-bold text-white uppercase tracking-wider mb-2">Email Address</label>
+                    <label htmlFor="email" className="block text-xs font-extrabold text-white uppercase tracking-widest mb-2">Email Address</label>
                     <input 
                       type="email" 
                       id="email"
+                      required
                       value={formData.email}
                       onChange={(e) => setFormData({...formData, email: e.target.value})}
                       className={cn(
-                        "w-full bg-[#111318] border rounded px-4 py-4 text-white placeholder-[#555555] font-sans text-lg focus:outline-none transition-colors",
-                        errors.email ? "border-red-500 focus:border-red-500" : "border-[#2a2d35] focus:border-brand-gold hover:border-[#444]"
+                        "w-full bg-[#111318] border-2 rounded-sm px-4 py-3 text-white placeholder-stone-600 font-sans text-sm focus:outline-none transition-colors",
+                        errors.email ? "border-red-500 focus:border-red-500" : "border-white/5 focus:border-[#e5b927] hover:border-white/10"
                       )}
                       placeholder="jane@example.com"
                     />
-                    {errors.email && <p className="text-red-500 text-sm font-bold mt-2">{errors.email}</p>}
+                    {errors.email && <p className="text-red-500 text-xs font-bold mt-2 font-mono uppercase">{errors.email}</p>}
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-bold text-white uppercase tracking-wider mb-2">Subject</label>
+                    <label htmlFor="subject" className="block text-xs font-extrabold text-white uppercase tracking-widest mb-2">Subject / Enterprise Intent</label>
                     <input 
                       type="text" 
                       id="subject"
+                      required
                       value={formData.subject}
                       onChange={(e) => setFormData({...formData, subject: e.target.value})}
                       className={cn(
-                        "w-full bg-[#111318] border rounded px-4 py-4 text-white placeholder-[#555555] font-sans text-lg focus:outline-none transition-colors",
-                        errors.subject ? "border-red-500 focus:border-red-500" : "border-[#2a2d35] focus:border-brand-gold hover:border-[#444]"
+                        "w-full bg-[#111318] border-2 rounded-sm px-4 py-3 text-white placeholder-stone-600 font-sans text-sm focus:outline-none transition-colors",
+                        errors.subject ? "border-red-500 focus:border-red-500" : "border-white/5 focus:border-[#e5b927] hover:border-white/10"
                       )}
-                      placeholder="Project Inquiry"
+                      placeholder="AI Blueprint Optimization"
                     />
-                    {errors.subject && <p className="text-red-500 text-sm font-bold mt-2">{errors.subject}</p>}
+                    {errors.subject && <p className="text-red-500 text-xs font-bold mt-2 font-mono uppercase">{errors.subject}</p>}
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-bold text-white uppercase tracking-wider mb-2">Message</label>
+                    <label htmlFor="message" className="block text-xs font-extrabold text-white uppercase tracking-widest mb-2">Message Proposal</label>
                     <textarea 
                       id="message"
                       rows={5}
+                      required
                       value={formData.message}
                       onChange={(e) => setFormData({...formData, message: e.target.value})}
                       className={cn(
-                        "w-full bg-[#111318] border rounded px-4 py-4 text-white placeholder-[#555555] font-sans text-lg focus:outline-none transition-colors resize-y",
-                        errors.message ? "border-red-500 focus:border-red-500" : "border-[#2a2d35] focus:border-brand-gold hover:border-[#444]"
+                        "w-full bg-[#111318] border-2 rounded-sm px-4 py-3 text-white placeholder-stone-600 font-sans text-sm focus:outline-none transition-colors resize-none",
+                        errors.message ? "border-red-500 focus:border-red-500" : "border-white/5 focus:border-[#e5b927] hover:border-white/10"
                       )}
-                      placeholder="Hello David, I'd like to talk about..."
+                      placeholder="Tell David how you desire to scale or automate..."
                     />
-                    {errors.message && <p className="text-red-500 text-sm font-bold mt-2">{errors.message}</p>}
+                    {errors.message && <p className="text-red-500 text-xs font-bold mt-2 font-mono uppercase">{errors.message}</p>}
                   </div>
 
                   <button 
                     type="submit"
-                    className="w-full btn-primary py-4 text-lg tracking-widest uppercase font-bold"
+                    className="w-full py-4 bg-[#e5b927] text-black font-extrabold border-2 border-black tracking-widest hover:bg-white hover:shadow-[6px_6px_0_0_rgba(255,255,255,1)] hover:-translate-y-0.5 active:translate-y-0 text-xs sm:text-xs uppercase transition-all rounded-sm shadow-[4px_4px_0_0_rgba(255,255,255,0.7)] cursor-pointer"
                   >
-                    Send Message
+                    SEND STRATEGIC INQUIRY
                   </button>
                 </motion.form>
               )}

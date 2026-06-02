@@ -6,6 +6,7 @@
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
+import { WhoIsThisFor } from './components/WhoIsThisFor';
 import { WhatIDo } from './components/WhatIDo';
 import { Skills } from './components/Skills';
 import { Projects } from './components/Projects';
@@ -39,6 +40,7 @@ export default function App() {
       <main id="main">
         <Hero />
         <About />
+        <WhoIsThisFor />
         <WhatIDo />
         <Skills />
         <Projects />

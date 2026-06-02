@@ -13,7 +13,7 @@ export function BlogPreview() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {data.blog.map((post, index) => (
             <motion.div
               key={index}
@@ -21,45 +21,48 @@ export function BlogPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex flex-col bg-white border border-[#e5e5e5] group cursor-pointer hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 overflow-hidden"
-              onClick={() => window.open(`/?post=${post.id}`, '_blank')}
+              className="flex flex-col bg-white border-4 border-black group cursor-pointer hover:-translate-y-1 transition-all duration-300 overflow-hidden shadow-[8px_8px_0_0_rgba(17,19,24,1)] hover:shadow-[12px_12px_0_0_rgba(229,185,39,1)] rounded-sm"
+              onClick={() => window.location.href = `/?post=${post.id}`}
             >
-              <div className="w-full h-48 overflow-hidden">
+              <div className="w-full h-48 overflow-hidden relative border-b-2 border-black">
                 <img 
                   src={post.image} 
                   alt={post.title} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0"
                   referrerPolicy="no-referrer"
                 />
+                <span className="absolute top-3 left-3 bg-[#e5b927] text-black text-[9px] font-extrabold uppercase px-2.5 py-1.5 border border-black rounded-sm shadow-[2px_2px_0_0_rgba(0,0,0,1)]">
+                  {post.category}
+                </span>
               </div>
               
-              <div className="p-8 flex flex-col flex-grow">
-                <div className="flex justify-between items-center mb-6">
-                  <span className="text-[13px] font-bold text-brand-gold uppercase tracking-widest">
-                    {post.category}
-                  </span>
-                  <span className="text-[13px] font-sans text-[#888888] uppercase tracking-widest font-bold">
+              <div className="p-6 flex flex-col flex-grow">
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest font-extrabold">
                     {post.date}
                   </span>
                 </div>
                 
-                <h3 className="text-xl lg:text-2xl font-display font-bold text-[#111111] leading-[1.1] uppercase tracking-tight mb-4 group-hover:text-brand-gold transition-colors duration-300">
+                <h3 className="text-xl font-display font-extrabold text-[#111111] leading-none uppercase tracking-tighter mb-4 group-hover:text-[#e5b927] transition-colors duration-300">
                   {post.title}
                 </h3>
                 
-                <p className="text-[#444444] font-sans text-[16px] leading-relaxed mb-8 flex-grow">
+                <p className="text-[#555555] font-sans text-xs sm:text-sm leading-relaxed mb-6 flex-grow">
                   {post.excerpt}
                 </p>
                 
-                <div className="mt-auto">
+                <div className="mt-auto pt-4 border-t border-black/5">
                   <a 
                     href={`/?post=${post.id}`}
-                    target="_blank"
-                    rel="noopener noreferrer" 
-                    className="text-brand-gold font-bold uppercase tracking-widest text-sm transition-colors flex items-center"
-                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-black hover:text-[#e5b927] transition-colors"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      e.preventDefault();
+                      window.location.href = `/?post=${post.id}`;
+                    }}
                   >
-                    Read More <span className="ml-2 text-lg">→</span>
+                    <span>Analyze Blueprint</span>
+                    <span>→</span>
                   </a>
                 </div>
               </div>
@@ -68,8 +71,12 @@ export function BlogPreview() {
         </div>
 
         <div className="text-center mt-6 lg:mt-12">
-          <a href="#" className="btn-primary uppercase tracking-widest font-bold text-[14px] px-10">
-            SEE ALL POSTS <span className="ml-2 font-normal text-lg leading-none">→</span>
+          <a 
+            href="#" 
+            onClick={(e) => { e.preventDefault(); }}
+            className="px-10 py-4 bg-black text-[#e5b927] font-extrabold border-2 border-black tracking-widest hover:bg-[#e5b927] hover:text-black transition-all cursor-pointer text-xs uppercase inline-block text-center rounded-sm shadow-[6px_6px_0_0_rgba(229,185,39,1)] hover:shadow-none"
+          >
+            SEE ALL BLUEPRINTS <span className="ml-2">→</span>
           </a>
         </div>
 

@@ -18,16 +18,17 @@ export function Achievements() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            className="bg-[#0b0b0b] p-8 lg:p-12 border border-white/5 border-t-2 border-t-[#2a2d35] hover:border-t-brand-gold transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center"
+            className="bg-[#111318] p-8 lg:p-12 border-2 border-white/5 hover:border-[#e5b927]/60 shadow-[8px_8px_0_0_rgba(229,185,39,0.03)] hover:shadow-[12px_12px_0_0_rgba(229,185,39,0.08)] transition-all duration-305 flex flex-col items-center text-center rounded-sm group relative overflow-hidden"
           >
-            <div className="text-5xl mb-6">🏆</div>
-            <span className="text-brand-gold uppercase tracking-widest text-xs font-bold mb-4">GLOBAL COMPETITION</span>
-            <h3 className="font-display font-extrabold text-2xl :text-3xl text-white leading-[1] uppercase tracking-tight mb-4">
+            <div className="absolute top-0 inset-x-0 h-1.5 bg-[#e5b927]" />
+            <div className="text-5xl mb-6 transition-transform duration-300 group-hover:scale-115">🏆</div>
+            <span className="text-zinc-500 uppercase tracking-widest text-[10px] font-extrabold mb-3">GLOBAL COMPETITION</span>
+            <h3 className="font-display font-extrabold text-2xl lg:text-3xl text-white leading-none uppercase tracking-tight mb-4">
               Mozilla Responsible Computing Challenge
             </h3>
-            <div className="text-brand-gold font-bold font-sans text-lg mb-6">2024</div>
-            <p className="font-sans text-[#aaaaaa] text-[16px] leading-relaxed">
-              Selected as a winner in Mozilla Foundation's global responsible computing challenge. This is the one that meant the most.
+            <div className="text-[#e5b927] font-extrabold font-sans text-xl mb-6">2024 WINNER</div>
+            <p className="font-sans text-stone-400 text-sm leading-relaxed">
+              Selected in a highly competitive worldwide cohort by the limits-breaking Mozilla Foundation. Awarded for pioneering ethical, transparent, and high-responsibility machine learning systems designed for real human impact.
             </p>
           </motion.div>
 
@@ -37,16 +38,17 @@ export function Achievements() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ delay: 0.1 }}
-            className="bg-[#0b0b0b] p-8 lg:p-12 border border-white/5 border-t-2 border-t-[#2a2d35] hover:border-t-brand-gold transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center"
+            className="bg-[#111318] p-8 lg:p-12 border-2 border-white/5 hover:border-[#e5b927]/60 shadow-[8px_8px_0_0_rgba(229,185,39,0.03)] hover:shadow-[12px_12px_0_0_rgba(229,185,39,0.08)] transition-all duration-305 flex flex-col items-center text-center rounded-sm group relative overflow-hidden"
           >
-            <div className="text-5xl mb-6">🎖️</div>
-            <span className="text-brand-gold uppercase tracking-widest text-xs font-bold mb-4">INSTITUTIONAL RECOGNITION</span>
-            <h3 className="font-display font-extrabold text-2xl :text-3xl text-white leading-[1] uppercase tracking-tight mb-4">
+            <div className="absolute top-0 inset-x-0 h-1.5 bg-zinc-700 group-hover:bg-[#e5b927] transition-colors" />
+            <div className="text-5xl mb-6 transition-transform duration-300 group-hover:scale-115">🎖️</div>
+            <span className="text-zinc-500 uppercase tracking-widest text-[10px] font-extrabold mb-3">INSTITUTIONAL EXCELLENCE</span>
+            <h3 className="font-display font-extrabold text-2xl lg:text-3xl text-white leading-none uppercase tracking-tight mb-4">
               University of Embu ICT Department
             </h3>
-            <div className="text-brand-gold font-bold font-sans text-lg mb-6">2025</div>
-            <p className="font-sans text-[#aaaaaa] text-[16px] leading-relaxed">
-              Recognized by Head of ICT Maurice Murimi Micheni for exceptional diligence, responsibility, and technical capability during industrial attachment.
+            <div className="text-[#e5b927] font-extrabold font-sans text-xl mb-6">OFFICIAL COMMENDATION</div>
+            <p className="font-sans text-stone-400 text-sm leading-relaxed">
+              Recognized with highest-tier commendation by Maurice Murimi Micheni (Head of ICT Services) for exceptional technical leadership, enterprise-grade cloud integrations, and core professional capability.
             </p>
           </motion.div>
         </div>

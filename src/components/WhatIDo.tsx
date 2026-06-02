@@ -73,7 +73,7 @@ export function WhatIDo() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: index * 0.15 }}
-                className={`group flex flex-col justify-between p-8 lg:p-10 bg-[#111318] border border-white/10 ${venture.borderColor} transition-all duration-300 relative rounded-sm h-full overflow-hidden`}
+                className={`group flex flex-col justify-between p-8 lg:p-12 bg-[#111318] border-2 border-white/5 hover:border-[#e5b927]/60 shadow-[8px_8px_0_0_rgba(229,185,39,0.03)] hover:shadow-[12px_12px_0_0_rgba(229,185,39,0.08)] transition-all duration-300 relative rounded-sm h-full overflow-hidden`}
               >
                 {/* Visual Gradient Overlay */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${venture.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
@@ -81,19 +81,19 @@ export function WhatIDo() {
                 <div className="relative z-10">
                   {/* Top Row with Icon and Badge */}
                   <div className="flex items-start justify-between mb-8">
-                    <div className={`p-4 bg-white/5 rounded-sm ${venture.accentColor} transition-transform duration-300 group-hover:scale-110`}>
+                    <div className={`p-4 bg-white/5 border border-white/10 rounded-sm ${venture.accentColor} transition-transform duration-300 group-hover:scale-110`}>
                       <IconComponent className="w-8 h-8" />
                     </div>
-                    <span className={`text-xs font-sans tracking-widest uppercase font-bold px-3 py-1.5 rounded-full ${venture.badgeBg}`}>
+                    <span className={`text-[10px] font-sans tracking-widest uppercase font-bold px-3 py-1.5 rounded-full ${venture.badgeBg}`}>
                       {venture.role}
                     </span>
                   </div>
 
                   {/* Title & Tagline */}
-                  <h3 className="text-2xl sm:text-3xl font-display font-extrabold text-white tracking-tight uppercase mb-4">
+                  <h3 className="text-3xl font-display font-extrabold text-white tracking-tighter uppercase mb-4">
                     {venture.title}
                   </h3>
-                  <p className="text-[#bbbbbb] font-sans text-sm leading-relaxed mb-8">
+                  <p className="text-[#bbbbbb] font-sans text-xs sm:text-sm leading-relaxed mb-8">
                     {venture.tagline}
                   </p>
 
@@ -101,7 +101,7 @@ export function WhatIDo() {
                   <div className="w-full h-px bg-white/10 mb-8" />
 
                   {/* Core Focus / List of capabilities */}
-                  <h4 className="text-xs font-bold font-sans uppercase tracking-widest text-[#888888] mb-4">
+                  <h4 className="text-[10px] font-bold font-sans uppercase tracking-widest text-[#666666] mb-4">
                     Core Capabilities:
                   </h4>
                   <ul className="space-y-3.5 mb-8">
@@ -122,9 +122,9 @@ export function WhatIDo() {
                     href={venture.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`inline-flex items-center gap-2 group/btn font-bold font-sans uppercase tracking-widest text-sm transition-all duration-350 ${venture.accentColor} hover:text-white`}
+                    className={`inline-flex items-center gap-2 group/btn font-bold font-sans uppercase tracking-widest text-xs transition-all border border-white/15 px-5 py-3 rounded-sm hover:bg-[#e5b927] hover:text-black hover:border-black ${venture.accentColor}`}
                   >
-                    <span>Launch Website</span>
+                    <span>Launch Platform</span>
                     <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
                   </a>
                 </div>
