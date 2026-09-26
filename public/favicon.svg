@@ -1,9 +1,13 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="64" height="64" rx="14" fill="#07090e" />
-  <rect x="1" y="1" width="62" height="62" rx="13" stroke="#1f2638" stroke-width="2" />
-  <!-- Architectural D in Pure White -->
-  <path d="M14 16V48H26C34.8 48 40 41.5 40 32C40 22.5 34.8 16 26 16H14ZM20 22H25C30.5 22 34 26 34 32C34 38 30.5 42 25 42H20V22Z" fill="#FFFFFF" />
-  <!-- Interlocking W in Warm Gold with Cyan Accent Node -->
-  <path d="M25 48L32 26L38 40L44 26L51 48" stroke="#e5b927" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
-  <circle cx="38" cy="40" r="3.5" fill="#00f0ff" stroke="#ffffff" stroke-width="1.5" />
+  <!-- Solid Dark Square Tile: High-contrast visibility on both light and dark browser Chrome -->
+  <rect width="64" height="64" rx="14" fill="#060813" />
+  <rect x="1" y="1" width="62" height="62" rx="13" stroke="#1e293b" stroke-width="2" />
+  
+  <!-- Optically Centered 1:1 Vector -->
+  <g transform="translate(0.8, 4.4) scale(0.6)">
+    <!-- Blade 1: Architectural D Foundation in Pure White -->
+    <path d="M16 22 H36 L56 50 L36 78 H16 Z" fill="#FFFFFF" />
+    <!-- Blade 2: Kinetic W Vector & Ascent in Electric Cyan -->
+    <path d="M44 22 H60 L80 14 L88 48 L68 78 H44 L64 50 Z" fill="#00A8FF" />
+  </g>
 </svg>

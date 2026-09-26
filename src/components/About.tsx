@@ -32,7 +32,7 @@ export function About({ onNavigate }: AboutProps) {
               <span>MY STORY · THE BUILDER'S JOURNEY</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white leading-[0.96] mb-6 uppercase tracking-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white leading-tight mb-5 uppercase tracking-tight">
               FROM ZERO CODE IN 2022 TO <br />
               <span className="text-[#00a8ff]">FIRST CLASS HONOURS</span> &amp; GLOBAL IMPACT.
             </h2>

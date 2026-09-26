@@ -51,7 +51,7 @@ export function Contact() {
         
         <div className="text-center mb-16 lg:mb-20 max-w-3xl mx-auto">
           <span className="section-kicker">WORK WITH DAVE WAIHENYA</span>
-          <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-white leading-[0.96] mb-4 uppercase tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white leading-tight mb-3 uppercase tracking-tight">
             LET'S BUILD SOMETHING <span className="text-[#00a8ff]">REAL</span>.
           </h2>
           <p className="font-sans text-[#94a3b8] text-base sm:text-lg">

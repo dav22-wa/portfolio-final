@@ -57,24 +57,24 @@ export function Speaking({ onNavigate }: SpeakingProps) {
           <div className="max-w-2xl text-left">
             
             {/* Cyan Kicker */}
-            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#00a8ff] mb-4">
-              BUSINESS &amp; PERFORMANCE KEYNOTES
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#00a8ff] mb-3">
+              KEYNOTES &amp; TECHNICAL WORKSHOPS
             </p>
 
-            {/* Massive Headline (Barlow Condensed / Oswald Display) */}
-            <h1 className="font-display font-extrabold text-5xl sm:text-7xl lg:text-8xl text-white uppercase tracking-tight leading-[0.92] mb-6">
-              REAL STORIES. <br />
-              REAL TACTICS.
+            {/* Headline */}
+            <h1 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white uppercase tracking-tight leading-[1.04] mb-5">
+              FROM ZERO CODE <br />
+              <span className="text-[#00a8ff]">TO FIRST CLASS IMPACT.</span>
             </h1>
 
             {/* Subtitle description */}
-            <p className="font-sans text-base sm:text-lg lg:text-xl text-[#d4d4d4] leading-relaxed mb-6">
-              Your guests want more than motivation. They want results. I've condensed the playbook of going from zero code to First Class Honours, winning the global Mozilla Challenge, and engineering production AI into the most actionable sessions imaginable.
+            <p className="font-sans text-sm sm:text-base md:text-lg text-[#d4d4d4] leading-relaxed mb-5 max-w-xl">
+              Students, developers, and tech organizations don't need generic motivational fluff. They need the unvarnished playbook: how deliberate practice beats talent, how to build AI models that solve real African problems, and how to create software people pay for.
             </p>
 
-            {/* Fair warning callout */}
+            {/* Keynote philosophy callout */}
             <p className="font-sans text-base sm:text-lg text-white font-bold leading-relaxed mb-8">
-              Fair warning... they'll need a whole new notebook after this.
+              "Technology is not just something to consume—it is something to build."
             </p>
 
             {/* Pill CTA button (White background, black text, rounded-full) */}
@@ -97,7 +97,7 @@ export function Speaking({ onNavigate }: SpeakingProps) {
           
           {/* Centered Heading */}
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl text-white uppercase tracking-tight leading-none">
+            <h2 className="font-display font-extrabold text-2xl sm:text-3xl lg:text-4xl text-white uppercase tracking-tight leading-tight">
               SPEAKING FEE MAP
             </h2>
             <p className="text-xs sm:text-sm text-[#94a3b8] font-sans mt-3">
@@ -136,7 +136,7 @@ export function Speaking({ onNavigate }: SpeakingProps) {
                 preserveAspectRatio="xMidYMid meet"
               >
                 <defs>
-                  {/* Concentric gradients matching Dan Martell's cyan wave bands */}
+                  {/* Concentric gradients for cyan wave bands */}
                   <linearGradient id="arcGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
                     <stop offset="0%" stopColor="#bae6fd" stopOpacity="0.9" />
                     <stop offset="100%" stopColor="#7dd3fc" stopOpacity="0.7" />
@@ -217,7 +217,7 @@ export function Speaking({ onNavigate }: SpeakingProps) {
                 </g>
               </svg>
 
-              {/* Pin & Info Card at Home Base (Center bottom, matching Dan's Kelowna box) */}
+              {/* Pin & Info Card at Home Base (Center bottom) */}
               <div className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 z-20">
                 <div className="bg-[#0284c7]/95 backdrop-blur-md text-white border border-sky-300/40 rounded-xl px-4 sm:px-6 py-3 sm:py-3.5 shadow-2xl text-center min-w-[260px] sm:min-w-[320px]">
                   
@@ -253,7 +253,7 @@ export function Speaking({ onNavigate }: SpeakingProps) {
 
           </div>
 
-          {/* Centered Pill Button below the Map (Matching Dan Martell's "Book Dan to Speak") */}
+          {/* Centered Pill Button below the Map */}
           <div className="text-center mt-12 sm:mt-16">
             <button
               onClick={() => setIsBookingModalOpen(true)}

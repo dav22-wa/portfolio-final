@@ -28,7 +28,7 @@ export function Newsletter() {
           className="max-w-3xl mx-auto bg-[#0e1424] border border-[#1e293b] p-8 sm:p-12 lg:p-16 rounded-3xl shadow-2xl"
         >
           <span className="section-kicker">JOIN 2,400+ BUILDERS &amp; FOUNDERS</span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white leading-[0.96] mb-4 uppercase tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white leading-tight mb-3 uppercase tracking-tight">
             THE WEEKLY <span className="text-[#00a8ff]">BUILDER'S DISPATCH</span>.
           </h2>
           <p className="font-sans text-[#94a3b8] text-sm sm:text-base mb-8 max-w-xl mx-auto leading-relaxed">

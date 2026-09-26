@@ -8,7 +8,7 @@ export function Background() {
         
         <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
           <span className="section-label !text-[#00f0ff] mb-3">TRAJECTORY & CREDENTIALS</span>
-          <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-white leading-[0.96] mb-4 uppercase tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white leading-tight mb-3 uppercase tracking-tight">
             WHERE I'VE BEEN. WHAT I'VE EARNED.
           </h2>
           <p className="text-base sm:text-lg text-[#b3b3b3] font-sans leading-relaxed">

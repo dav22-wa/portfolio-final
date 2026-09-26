@@ -92,7 +92,7 @@ export function WhatIDo({ onNavigate }: WhatIDoProps) {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
           <span className="section-label !text-[#00f0ff] mb-3">VENTURES & CORE PRACTICES</span>
-          <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-white leading-[0.96] mb-6 uppercase tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white leading-tight mb-4 uppercase tracking-tight">
             WHAT I DO.
           </h2>
           <p className="text-[#d4d4d4] font-sans text-base sm:text-lg leading-relaxed">

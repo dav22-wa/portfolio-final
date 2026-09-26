@@ -249,7 +249,7 @@ Portfolio: https://davidwaihenya.vercel.app | GitHub: https://github.com/dav22-w
   return (
     <div className="w-full bg-[#060813] text-[#d4d4d4] pt-24 min-h-screen">
       
-      {/* 1. HERO SECTION (Matching danmartell.com/books hero) */}
+      {/* 1. HERO SECTION */}
       <section className="relative w-full min-h-[480px] lg:min-h-[560px] flex items-center border-b border-[#1e293b] overflow-hidden">
         {/* Background Image: Author at workspace with warm ambient lighting */}
         <div className="absolute inset-0 z-0">
@@ -266,19 +266,19 @@ Portfolio: https://davidwaihenya.vercel.app | GitHub: https://github.com/dav22-w
         <div className="relative z-10 max-w-[1360px] mx-auto px-6 lg:px-12 py-16 lg:py-24 w-full">
           <div className="max-w-3xl">
             {/* Sky Blue Eyebrow */}
-            <p className="text-xs sm:text-sm font-black uppercase tracking-widest text-[#00a8ff] mb-4">
-              BEST-SELLING AUTHOR & BUILDER
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#00a8ff] mb-3">
+              BOOKS &amp; ARCHITECTURAL PLAYBOOKS
             </p>
 
-            {/* Massive condensed headline */}
-            <h1 className="font-display font-extrabold text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-white uppercase tracking-tighter leading-[0.92] mb-6">
-              LEVEL UP YOUR <br />
-              READING LIST
+            {/* Headline */}
+            <h1 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white uppercase tracking-tight leading-[1.04] mb-5">
+              ROADMAPS FOR <br />
+              <span className="text-[#00a8ff]">THE NEXT GENERATION.</span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-base sm:text-lg lg:text-xl text-[#cbd5e1] font-sans leading-relaxed max-w-xl mb-8">
-              Dive deep and get the playbooks to scale your software, deploy applied AI, and build high-impact companies.
+            <p className="text-sm sm:text-base md:text-lg text-[#cbd5e1] font-sans leading-relaxed max-w-xl mb-7">
+              Concrete blueprints designed to guide African computer science graduates and young developers from raw skills to income, ventures, and enduring wealth.
             </p>
 
             {/* COLOR THEME SELECTOR PILL BAR */}
@@ -366,7 +366,7 @@ Portfolio: https://davidwaihenya.vercel.app | GitHub: https://github.com/dav22-w
                 className="relative cursor-pointer group"
                 onClick={() => setSelectedBook('book1')}
               >
-                {/* Gold Seal Badge (Matching Dan Martell's "The Wall Street Journal Bestseller" circular badge) */}
+                {/* Gold Seal Badge */}
                 <div className={`absolute -top-6 -left-6 sm:-left-8 z-30 w-24 h-24 sm:w-28 sm:h-28 rounded-full ${currentTheme.book1.badgeBg} ${currentTheme.book1.badgeText} p-1.5 shadow-[0_10px_25px_rgba(230,184,0,0.4)] flex items-center justify-center text-center transform -rotate-12 group-hover:rotate-0 transition-transform duration-300`}>
                   <div className="w-full h-full rounded-full border-2 border-dashed border-black/30 flex flex-col items-center justify-center p-1 leading-tight">
                     <span className="text-[7.5px] font-black uppercase tracking-wider">FIRST CLASS</span>
@@ -460,8 +460,8 @@ Portfolio: https://davidwaihenya.vercel.app | GitHub: https://github.com/dav22-w
                 {booksData.book1.eyebrow}
               </p>
 
-              {/* Massive White Headline */}
-              <h2 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white/80 uppercase tracking-tighter leading-[0.94] mb-6">
+              {/* White Headline */}
+              <h2 className="font-display font-extrabold text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white/90 uppercase tracking-tight leading-tight mb-4">
                 {booksData.book1.headlinePrefix} <br className="hidden sm:inline" />
                 <span className="text-white font-black">{booksData.book1.headlineEmphasis}</span>
               </h2>
@@ -503,7 +503,7 @@ Portfolio: https://davidwaihenya.vercel.app | GitHub: https://github.com/dav22-w
 
       {/* 3. BOOK 2 SECTION: "THE AI BUSINESS PLAYBOOK FOR AFRICA" (Left: Bold Text & Buy button, Right: 3D Hardcover with Warm Bokeh Background) */}
       <section className="relative w-full py-20 lg:py-32 border-b border-[#1e293b] overflow-hidden bg-[#060813]">
-        {/* Warm Golden/Amber Bokeh circles matching Dan Martell's Software as a Science background */}
+        {/* Warm Cyan/Indigo Bokeh circles */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-1/4 left-1/3 w-[350px] h-[350px] rounded-full bg-[#38bdf8]/10 blur-[120px]" />
           <div className="absolute bottom-10 right-1/4 w-[400px] h-[400px] rounded-full bg-[#00a8ff]/10 blur-[140px]" />
@@ -520,8 +520,8 @@ Portfolio: https://davidwaihenya.vercel.app | GitHub: https://github.com/dav22-w
                 {booksData.book2.eyebrow}
               </p>
 
-              {/* Massive White Headline */}
-              <h2 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white/80 uppercase tracking-tighter leading-[0.94] mb-6">
+              {/* White Headline */}
+              <h2 className="font-display font-extrabold text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white/90 uppercase tracking-tight leading-tight mb-4">
                 {booksData.book2.headlinePrefix} <br className="hidden sm:inline" />
                 <span className="text-white font-black">{booksData.book2.headlineEmphasis}</span>
               </h2>
@@ -619,7 +619,7 @@ Portfolio: https://davidwaihenya.vercel.app | GitHub: https://github.com/dav22-w
                         </p>
                       </div>
 
-                      {/* Bottom Author Credentials matching Dan's cover */}
+                      {/* Bottom Author Credentials */}
                       <div className="relative z-10 border-t border-white/10 pt-4 text-center">
                         <p className="text-[10px] font-display font-black tracking-widest text-white uppercase">
                           DAVE WAIHENYA

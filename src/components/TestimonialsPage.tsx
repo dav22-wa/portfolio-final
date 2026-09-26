@@ -108,7 +108,7 @@ export function TestimonialsPage({ onNavigate }: { onNavigate?: (page: string) =
     }
   ];
 
-  // MAIN GRID OF CLIENT & MENTEE STORIES (Matching the dense 6-column grid from Dan Martell screenshot)
+  // MAIN GRID OF CLIENT & MENTEE STORIES
   const allClientStories: TestimonialStory[] = [
     {
       id: 'story-1',
@@ -685,7 +685,7 @@ export function TestimonialsPage({ onNavigate }: { onNavigate?: (page: string) =
   return (
     <div className="w-full bg-[#060813] text-[#d4d4d4] pt-24 min-h-screen">
       
-      {/* 1. HERO SECTION (Dark theme #060813 matching Dan Martell reference screenshot) */}
+      {/* 1. HERO SECTION */}
       <section className="relative w-full pt-12 pb-16 lg:pt-16 lg:pb-20 border-b border-[#1e293b] overflow-hidden">
         {/* Subtle Ambient background accents */}
         <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#00a8ff]/5 rounded-full blur-[140px] pointer-events-none" />
@@ -697,19 +697,19 @@ export function TestimonialsPage({ onNavigate }: { onNavigate?: (page: string) =
             {/* Left Column: Eyebrow, Huge Condensed Headline, Subtitle */}
             <div className="lg:col-span-6 xl:col-span-7">
               {/* Sky Blue Eyebrow */}
-              <p className="text-xs sm:text-sm font-black uppercase tracking-widest text-[#00a8ff] mb-4">
-                TESTIMONIALS
+              <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#00a8ff] mb-3">
+                PROVEN RESULTS &amp; STORIES
               </p>
 
-              {/* Massive White Headline matching Dan Martell screenshot */}
-              <h1 className="font-display font-extrabold text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-white uppercase tracking-tighter leading-[0.92] mb-6">
-                OUR CLIENTS ARE <br />
-                <span className="text-white">CRUSHING IT.</span>
+              {/* White Headline */}
+              <h1 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white uppercase tracking-tight leading-[1.04] mb-5">
+                REAL SYSTEMS. <br />
+                <span className="text-[#00a8ff]">MEASURABLE IMPACT.</span>
               </h1>
 
               {/* Subtitle */}
-              <p className="text-base sm:text-lg lg:text-xl text-[#94a3b8] font-sans leading-relaxed max-w-xl mb-8">
-                Hear directly from founders, teams, and builders scaling systems, deploying high-impact AI, and engineering breakthroughs with Dave Waihenya.
+              <p className="text-sm sm:text-base md:text-lg text-[#94a3b8] font-sans leading-relaxed max-w-xl mb-7">
+                Hear directly from enterprise founders, small business owners, and engineering mentees who partnered with David Waihenya to automate workflows, deploy custom AI, and accelerate their tech ventures.
               </p>
 
               {/* Quick stats ribbon */}
@@ -734,7 +734,7 @@ export function TestimonialsPage({ onNavigate }: { onNavigate?: (page: string) =
                 {/* High-contrast gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#060813] via-transparent to-black/40" />
 
-                {/* Simulated Floating Video Call Wall Badges (Echoing the multi-monitor broadcast setup in Dan's photo) */}
+                {/* Simulated Floating Video Call Wall Badges */}
                 <div className="absolute top-4 right-4 bg-black/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                   <span className="text-[10px] font-bold uppercase tracking-wider text-white">Live Client Diagnostic Grid</span>
@@ -758,7 +758,7 @@ export function TestimonialsPage({ onNavigate }: { onNavigate?: (page: string) =
         </div>
       </section>
 
-      {/* 2. SPOTLIGHT SUCCESS STORIES (Dark Navy Section - 4 Video Cards Row matching Dan Martell screenshot) */}
+      {/* 2. SPOTLIGHT SUCCESS STORIES */}
       <section className="w-full py-16 lg:py-20 border-b border-[#1e293b] bg-[#060813]">
         <div className="max-w-[1360px] mx-auto px-6 lg:px-10">
           
@@ -829,18 +829,18 @@ export function TestimonialsPage({ onNavigate }: { onNavigate?: (page: string) =
         </div>
       </section>
 
-      {/* 3. HIGH-CONTRAST CRISP WHITE SECTION (Matching Dan Martell's "296+ CLIENT STORIES" and 6-column grid) */}
+      {/* 3. HIGH-CONTRAST CRISP WHITE SECTION */}
       <section className="w-full bg-white text-neutral-900 py-16 sm:py-24">
         <div className="max-w-[1360px] mx-auto px-6 lg:px-10">
           
-          {/* Huge Black Bold Title */}
+          {/* Title */}
           <div className="mb-8">
-            <h2 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-neutral-900 uppercase tracking-tight">
+            <h2 className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-neutral-900 uppercase tracking-tight">
               50+ CLIENT STORIES
             </h2>
           </div>
 
-          {/* Category Filter Pills (Matching the Dan Martell horizontal pills) */}
+          {/* Category Filter Pills */}
           <div className="flex flex-wrap gap-2.5 mb-10 pb-2">
             {categories.map((cat) => {
               const isActive = activeCategory === cat;
@@ -900,7 +900,7 @@ export function TestimonialsPage({ onNavigate }: { onNavigate?: (page: string) =
                     {story.videoDuration}
                   </div>
 
-                  {/* Bottom Text Box with Bold UPPERCASE quote (Black bottom band matching Dan Martell) */}
+                  {/* Bottom Text Box with Bold UPPERCASE quote */}
                   <div className="absolute bottom-0 inset-x-0 p-2.5 bg-black/75 backdrop-blur-[2px]">
                     <p className="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-tight text-white leading-tight line-clamp-3">
                       {story.bannerQuote}

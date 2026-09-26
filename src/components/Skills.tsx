@@ -19,7 +19,7 @@ export function Skills() {
       <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="section-label !text-brand-gold mb-4">WHAT I DO</span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white leading-tight mb-4 uppercase tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white leading-tight mb-3 uppercase tracking-tight">
             FOR THOSE WHO WANT REAL SOLUTIONS...
           </h2>
           <p className="text-[#aaaaaa] font-sans text-[16px] italic">

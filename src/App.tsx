@@ -5,6 +5,7 @@
 
 import { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
+import { HomePage } from './components/HomePage';
 import { Hero } from './components/Hero';
 import { WhoIsThisFor } from './components/WhoIsThisFor';
 import { About } from './components/About';
@@ -22,6 +23,8 @@ import { TestimonialsPage } from './components/TestimonialsPage';
 import { WhatIDo } from './components/WhatIDo';
 import { BookSection } from './components/BookSection';
 import { BlogPost } from './components/BlogPost';
+import { Careers } from './components/Careers';
+import { BrandPresentation } from './components/BrandPresentation';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<string>('home');
@@ -39,7 +42,7 @@ export default function App() {
       setPostId(null);
 
       const hash = window.location.hash.replace('#', '').toLowerCase();
-      if (['story', 'speaking', 'testimonials', 'book', 'what-i-do', 'contact', 'blog'].includes(hash)) {
+      if (['story', 'speaking', 'testimonials', 'book', 'what-i-do', 'contact', 'blog', 'careers', 'brand'].includes(hash)) {
         setCurrentPage(hash);
       } else {
         setCurrentPage('home');
@@ -88,37 +91,7 @@ export default function App() {
       
       <main id="main" className="flex-1">
         {currentPage === 'home' && (
-          <>
-            {/* 1. Hero Section (Dan Martell layout with Dave's identity & mission) */}
-            <Hero onNavigate={handleNavigate} />
-
-            {/* 2. "Who I Help" Section (Startups, Local Businesses, Students) */}
-            <WhoIsThisFor onNavigate={handleNavigate} />
-
-            {/* 3. "My Story" Section (2022 zero background to First Class Honours & ventures) */}
-            <About onNavigate={handleNavigate} />
-
-            {/* 4. Featured Flagship Project (SYNERGY Multi-Agent Intelligence & Builder's Blueprint) */}
-            <FeaturedProject onNavigate={handleNavigate} />
-
-            {/* 5. Companies / Ventures Section (SYNERGY, Velox AI, Davamos Tech) */}
-            <Ventures onNavigate={handleNavigate} />
-
-            {/* 6. Certifications & Achievements Section (IBM Skills, CCNA, Mozilla Challenge, First Class) */}
-            <Achievements onNavigate={handleNavigate} />
-
-            {/* 7. Production Projects Repository (Full engineered systems) */}
-            <Projects />
-
-            {/* 8. Blog Section (Latest essays on AI, Python/Flask, freelancing, cybersecurity) */}
-            <BlogPreview onSelectPost={handleSelectPost} />
-
-            {/* 9. Newsletter Section (Weekly builder's dispatch) */}
-            <Newsletter />
-
-            {/* 10. Contact / "Work With Me" Section */}
-            <Contact />
-          </>
+          <HomePage onNavigate={handleNavigate} onSelectPost={handleSelectPost} />
         )}
 
         {currentPage === 'story' && (
@@ -141,6 +114,10 @@ export default function App() {
           <WhatIDo onNavigate={handleNavigate} />
         )}
 
+        {currentPage === 'careers' && (
+          <Careers onNavigate={handleNavigate} />
+        )}
+
         {currentPage === 'blog' && (
           <div className="pt-24 pb-12">
             <BlogPreview onSelectPost={handleSelectPost} />
@@ -151,6 +128,10 @@ export default function App() {
           <div className="pt-24 pb-12">
             <Contact />
           </div>
+        )}
+
+        {currentPage === 'brand' && (
+          <BrandPresentation onNavigate={handleNavigate} />
         )}
       </main>
 

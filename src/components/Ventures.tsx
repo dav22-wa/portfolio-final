@@ -56,7 +56,7 @@ export function Ventures({ onNavigate }: VenturesProps) {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl text-left">
             <span className="section-kicker">VENTURES &amp; INITIATIVES</span>
-            <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-white uppercase tracking-tight leading-none">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white uppercase tracking-tight leading-tight">
               COMPANIES I'M <span className="text-[#00a8ff]">BUILDING</span>.
             </h2>
             <p className="text-[#94a3b8] font-sans text-base sm:text-lg leading-relaxed mt-4">

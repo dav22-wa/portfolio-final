@@ -75,6 +75,10 @@ export function Navbar({ currentPage, onNavigate }: NavbarProps) {
     {
       title: 'Testimonials',
       id: 'testimonials'
+    },
+    {
+      title: 'Brand Identity',
+      id: 'brand'
     }
   ];
 
@@ -114,20 +118,18 @@ export function Navbar({ currentPage, onNavigate }: NavbarProps) {
   return (
     <header className="fixed top-0 left-0 right-0 w-full z-[100] transition-all duration-300">
       
-      {/* 1. TOP ANNOUNCEMENT BANNER BAR (Dan Martell structure) */}
-      <div className="w-full bg-[#04060d] border-b border-[#1e293b]/70 py-2 px-4 text-center text-[11px] sm:text-xs text-[#94a3b8] font-sans flex items-center justify-center gap-2 sm:gap-3 transition-colors">
-        <span className="flex items-center gap-1.5 font-medium text-slate-300">
-          <span className="inline-block w-2 h-2 rounded-full bg-[#00a8ff] animate-pulse" />
-          <span className="text-white font-bold">Open to opportunities</span>
-          <span className="hidden sm:inline text-slate-500">·</span>
-          <span className="hidden sm:inline">CCNA &amp; Junior Cybersecurity Analyst cert in progress</span>
-        </span>
+      {/* 1. TOP ANNOUNCEMENT BANNER BAR */}
+      <div className="w-full bg-[#04060d] border-b border-[#1e293b]/70 py-2 px-4 text-center text-[11px] sm:text-xs font-sans flex items-center justify-center transition-colors">
         <button
-          onClick={() => handleNavClick('contact')}
-          className="text-[#00a8ff] font-bold hover:text-white transition-colors cursor-pointer inline-flex items-center gap-1 underline decoration-[#00a8ff]/40 underline-offset-2 hover:decoration-white ml-1 shrink-0"
+          onClick={() => handleNavClick('book')}
+          className="flex items-center gap-2.5 font-bold tracking-wider text-slate-200 hover:text-white uppercase transition-colors cursor-pointer text-[10px] sm:text-xs"
         >
-          <span>Work With Me</span>
-          <ArrowRight className="w-3 h-3" />
+          <span className="w-2 h-2 rounded-full bg-[#00a8ff] animate-pulse" />
+          <span>FROM FIRST CLASS TO FIRST MILLION</span>
+          <span className="text-[#00a8ff] text-xs">·</span>
+          <span>A KENYAN GRADUATE’S ROADMAP</span>
+          <span className="text-[#00a8ff] text-xs">·</span>
+          <span className="text-[#00a8ff] underline underline-offset-2">READ THE BLUEPRINT →</span>
         </button>
       </div>
 
@@ -234,12 +236,14 @@ export function Navbar({ currentPage, onNavigate }: NavbarProps) {
               </AnimatePresence>
             </div>
 
-            {/* Projects */}
+            {/* Events */}
             <button
-              onClick={() => scrollToSection('projects')}
-              className="text-xs font-bold uppercase tracking-wider text-[#d4d4d4] hover:text-[#00a8ff] transition-colors py-2 cursor-pointer"
+              onClick={() => handleNavClick('speaking')}
+              className={`text-xs font-bold uppercase tracking-wider transition-colors py-2 cursor-pointer ${
+                currentPage === 'speaking' ? 'text-[#00a8ff]' : 'text-[#d4d4d4] hover:text-[#00a8ff]'
+              }`}
             >
-              Projects
+              Events
             </button>
 
             {/* Books */}
@@ -252,15 +256,17 @@ export function Navbar({ currentPage, onNavigate }: NavbarProps) {
               Books
             </button>
 
-            {/* Blog */}
+            {/* Careers */}
             <button
-              onClick={() => scrollToSection('blog')}
-              className="text-xs font-bold uppercase tracking-wider text-[#d4d4d4] hover:text-[#00a8ff] transition-colors py-2 cursor-pointer"
+              onClick={() => handleNavClick('careers')}
+              className={`text-xs font-bold uppercase tracking-wider transition-colors py-2 cursor-pointer ${
+                currentPage === 'careers' ? 'text-[#00a8ff]' : 'text-[#d4d4d4] hover:text-[#00a8ff]'
+              }`}
             >
-              Blog
+              Careers
             </button>
 
-            {/* About Dropdown (Exact sub headers: My Story, Speaking, Testimonials - matching Dan Martell screenshot) */}
+            {/* About Dropdown */}
             <div 
               ref={aboutRef}
               className="relative"
@@ -422,6 +428,15 @@ export function Navbar({ currentPage, onNavigate }: NavbarProps) {
                 }`}
               >
                 Books
+              </button>
+
+              <button
+                onClick={() => handleNavClick('careers')}
+                className={`text-left text-sm font-bold uppercase tracking-wider py-2 cursor-pointer ${
+                  currentPage === 'careers' ? 'text-[#00a8ff]' : 'text-[#d4d4d4] hover:text-[#00a8ff]'
+                }`}
+              >
+                Careers
               </button>
 
               <button

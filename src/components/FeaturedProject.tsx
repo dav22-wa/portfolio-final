@@ -73,7 +73,7 @@ Write code that creates leverage. Package your solutions into reusable platforms
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl text-left">
             <span className="section-kicker">FLAGSHIP SYSTEM SPOTLIGHT</span>
-            <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-white uppercase tracking-tight leading-none">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white uppercase tracking-tight leading-tight">
               SYNERGY: <span className="text-[#00a8ff]">MULTI-AGENT INTELLIGENCE</span> &amp; VISION.
             </h2>
             <p className="text-[#94a3b8] font-sans text-base sm:text-lg leading-relaxed mt-4">
@@ -104,7 +104,7 @@ Write code that creates leverage. Package your solutions into reusable platforms
         </div>
 
         {activeTab === 'architecture' ? (
-          /* Architecture Layout (Dan Martell featured showcase style) */
+          /* Architecture Layout */
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center bg-[#0e1424] border border-[#1e293b] rounded-3xl p-8 sm:p-12 shadow-2xl relative">
             
             {/* Left Column: Visual Mockup / Interactive Terminal Display */}

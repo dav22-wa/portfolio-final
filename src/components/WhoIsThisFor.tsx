@@ -77,7 +77,7 @@ export function WhoIsThisFor({ onNavigate }: WhoIsThisForProps) {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
           <span className="section-kicker">WHO I HELP</span>
-          <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-white uppercase tracking-tight leading-none mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white uppercase tracking-tight leading-tight mb-4">
             SOLVING REAL PROBLEMS FOR <span className="text-[#00a8ff]">THREE CORE AUDIENCES</span>.
           </h2>
           <p className="text-[#94a3b8] font-sans text-base sm:text-lg leading-relaxed">
@@ -85,7 +85,7 @@ export function WhoIsThisFor({ onNavigate }: WhoIsThisForProps) {
           </p>
         </div>
 
-        {/* 3-Column Card Grid (Dan Martell structure) */}
+        {/* 3-Column Card Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {cards.map((card, index) => {
             const Icon = card.icon;

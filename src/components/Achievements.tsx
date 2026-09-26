@@ -73,7 +73,7 @@ export function Achievements({ onNavigate }: AchievementsProps) {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl text-left">
             <span className="section-kicker">CREDENTIALS &amp; RECOGNITION</span>
-            <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-white leading-[0.96] uppercase tracking-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white leading-tight uppercase tracking-tight">
               CERTIFICATIONS &amp; <span className="text-[#00a8ff]">ACHIEVEMENTS</span>.
             </h2>
             <p className="text-base sm:text-lg text-[#94a3b8] font-sans leading-relaxed mt-4">

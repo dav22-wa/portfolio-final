@@ -55,7 +55,7 @@
     font-family: var(--font-sans);
   }
   
-  /* Dan Martell signature sky-blue button */
+  /* Signature sky-blue pill button */
   .btn-sky {
     display: inline-flex;
     align-items: center;
@@ -78,7 +78,7 @@
     transform: translateY(-2px);
   }
 
-  /* Dan Martell signature white button */
+  /* Signature white pill button */
   .btn-white {
     display: inline-flex;
     align-items: center;

@@ -55,14 +55,14 @@ export function Hero({ onNavigate }: HeroProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            {/* 1. One-line identity statement (Dan Martell pattern) */}
-            <div className="flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-widest text-[#00a8ff] mb-4">
+            {/* 1. Identity Statement */}
+            <div className="flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#00a8ff] mb-3">
               <Sparkles className="w-4 h-4 text-[#00a8ff]" />
-              <span>SOFTWARE DEVELOPER, AI BUILDER, AND ASPIRING ENTREPRENEUR</span>
+              <span>COMPUTER SCIENCE GRADUATE · FIRST CLASS HONOURS · AI BUILDER</span>
             </div>
 
             {/* 2. Bold headline capturing mission */}
-            <h1 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white leading-[0.96] uppercase tracking-tight mb-6">
+            <h1 className="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white leading-[1.08] uppercase tracking-tight mb-5">
               BUILDING REAL SYSTEMS, <br />
               <span className="text-[#00a8ff]">SCALING VENTURES</span>, <br />
               AND ENGINEERING AFRICA'S FUTURE.
@@ -73,7 +73,7 @@ export function Hero({ onNavigate }: HeroProps) {
               First Class Honours Computer Science graduate (<strong className="text-white">University of Embu, Class of 2026</strong>) and global <strong className="text-white">Mozilla Responsible Computing Challenge Winner</strong>. Starting from zero coding background in 2022, I build production AI models, high-performance web systems, and scalable companies from the ground up.
             </p>
 
-            {/* Action Buttons: Dan Martell signature buttons */}
+            {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-3.5 sm:gap-4 mb-10">
               <button 
                 onClick={() => handleNav('contact')}

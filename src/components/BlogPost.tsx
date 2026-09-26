@@ -102,7 +102,7 @@ export function BlogPost({ postId }: { postId: string }) {
               </span>
             </div>
             
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white leading-[1.05] uppercase tracking-tight mb-6">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white leading-tight uppercase tracking-tight mb-5">
               {post.title}
             </h1>
           </motion.div>
