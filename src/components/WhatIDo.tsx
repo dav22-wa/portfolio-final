@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   ArrowRight, 
   ExternalLink, 
@@ -19,22 +19,32 @@ import {
   X,
   Mail,
   Building2,
-  Calendar
+  Calendar,
+  Heart
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ApexLogoSvg } from './BrandLogo';
+import { WaihenyaFoundation } from './WaihenyaFoundation';
 
 interface WhatIDoProps {
   onNavigate?: (page: string) => void;
+  initialTab?: 'ventures' | 'foundation';
 }
 
-export function WhatIDo({ onNavigate }: WhatIDoProps) {
+export function WhatIDo({ onNavigate, initialTab = 'ventures' }: WhatIDoProps) {
+  const [activeTab, setActiveTab] = useState<'ventures' | 'foundation'>(initialTab);
   const [activeModal, setActiveModal] = useState<string | null>(null);
   const [promptInput, setPromptInput] = useState('');
   const [promptResponse, setPromptResponse] = useState<string | null>(null);
   const [isProcessingPrompt, setIsProcessingPrompt] = useState(false);
   const [scanActive, setScanActive] = useState(false);
   const [consultationStatus, setConsultationStatus] = useState<'idle' | 'submitted'>('idle');
+
+  useEffect(() => {
+    if (initialTab) {
+      setActiveTab(initialTab);
+    }
+  }, [initialTab]);
 
   // Consultation form state
   const [consultationForm, setConsultationForm] = useState({
@@ -76,11 +86,26 @@ export function WhatIDo({ onNavigate }: WhatIDoProps) {
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
+  if (activeTab === 'foundation') {
+    return (
+      <div className="w-full bg-[#04060d] text-[#d4d4d4] selection:bg-[#00a8ff] selection:text-black">
+        <WaihenyaFoundation 
+          onNavigate={onNavigate} 
+          onSwitchToVentures={() => {
+            setActiveTab('ventures');
+            window.location.hash = 'what-i-do';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }} 
+        />
+      </div>
+    );
+  }
+
   return (
-    <div className="w-full bg-[#04060d] text-[#d4d4d4] selection:bg-[#00a8ff] selection:text-black">
+    <div className="w-full bg-[#04060d] text-[#d4d4d4] selection:bg-[#00a8ff] selection:text-black overflow-x-hidden">
       
       {/* 1. HERO SECTION (Matching Dan Martell Ventures Hero Style) */}
-      <section className="relative w-full min-h-[85vh] lg:min-h-[92vh] flex items-end pb-16 lg:pb-24 pt-36 lg:pt-40 overflow-hidden border-b border-[#1e293b]">
+      <section className="relative w-full min-h-[80vh] sm:min-h-[85vh] lg:min-h-[92vh] flex items-end pb-12 sm:pb-16 lg:pb-24 pt-28 sm:pt-36 lg:pt-40 overflow-hidden border-b border-[#1e293b]">
         {/* Full-bleed atmospheric background: collaborative tech workshop & whiteboard scene */}
         <div className="absolute inset-0 z-0">
           <img
@@ -93,7 +118,7 @@ export function WhatIDo({ onNavigate }: WhatIDoProps) {
           <div className="absolute inset-0 bg-gradient-to-r from-[#04060d] via-[#04060d]/80 to-transparent" />
         </div>
 
-        <div className="relative z-10 max-w-[1360px] mx-auto px-6 lg:px-12 w-full">
+        <div className="relative z-10 max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-12 w-full">
           <div className="max-w-3xl text-left">
             
             {/* Kicker label */}
@@ -111,7 +136,7 @@ export function WhatIDo({ onNavigate }: WhatIDoProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="font-sans font-black text-4xl sm:text-6xl lg:text-7xl xl:text-8xl text-white uppercase tracking-tight leading-[0.95] mb-6 drop-shadow-2xl"
+              className="font-sans font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white uppercase tracking-tight leading-[0.98] sm:leading-[0.95] mb-5 sm:mb-6 drop-shadow-2xl"
             >
               BUILDING <br />
               <span className="text-[#00a8ff]">WHAT’S NEXT.</span>
@@ -122,7 +147,7 @@ export function WhatIDo({ onNavigate }: WhatIDoProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-base sm:text-lg lg:text-xl text-slate-200 font-sans leading-relaxed max-w-2xl mb-8"
+              className="text-sm sm:text-base lg:text-xl text-slate-200 font-sans leading-relaxed max-w-2xl mb-6 sm:mb-8"
             >
               Software, AI and specialized engineering teams. Built around the hardest operational problems businesses and ambitious founders face every day.
             </motion.p>
@@ -132,18 +157,18 @@ export function WhatIDo({ onNavigate }: WhatIDoProps) {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="flex flex-wrap items-center gap-4"
+              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4"
             >
               <button
                 onClick={scrollToPortfolio}
-                className="px-8 py-4 bg-[#00a8ff] text-black font-extrabold text-xs sm:text-sm uppercase tracking-wider rounded-full hover:bg-white transition-all shadow-[0_0_25px_rgba(0,168,255,0.4)] cursor-pointer"
+                className="w-full sm:w-auto px-8 py-3.5 sm:py-4 bg-[#00a8ff] text-black font-extrabold text-xs sm:text-sm uppercase tracking-wider rounded-full hover:bg-white transition-all shadow-[0_0_25px_rgba(0,168,255,0.4)] cursor-pointer text-center"
               >
                 Explore Our Companies
               </button>
 
               <button
                 onClick={() => onNavigate ? onNavigate('careers') : window.location.assign('/#careers')}
-                className="px-6 py-4 text-white hover:text-[#00a8ff] font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors cursor-pointer flex items-center gap-2"
+                className="w-full sm:w-auto px-6 py-3.5 sm:py-4 text-white hover:text-[#00a8ff] font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors cursor-pointer flex items-center justify-center gap-2"
               >
                 <span>Careers</span>
                 <ArrowRight className="w-4 h-4 text-[#00a8ff]" />
@@ -157,7 +182,7 @@ export function WhatIDo({ onNavigate }: WhatIDoProps) {
       {/* 2. VENTURES LOGO BAR (Under Hero, matching screenshot) */}
       <section className="w-full bg-[#030408] border-b border-[#1e293b] py-8 sm:py-10">
         <div className="max-w-[1360px] mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center opacity-85 hover:opacity-100 transition-opacity">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 items-center justify-items-center opacity-85 hover:opacity-100 transition-opacity">
             
             {/* Logo 1: AI Solution Studio */}
             <div className="flex items-center gap-2.5 font-sans font-black text-lg sm:text-xl text-white uppercase tracking-wider group cursor-pointer" onClick={scrollToPortfolio}>
@@ -184,6 +209,20 @@ export function WhatIDo({ onNavigate }: WhatIDoProps) {
             <div className="flex items-center gap-2 font-mono font-bold text-base sm:text-lg text-slate-300 hover:text-white transition-colors cursor-pointer" onClick={scrollToPortfolio}>
               <Cpu className="w-5 h-5 text-[#00a8ff]" />
               <span>SYNERGY LABS</span>
+            </div>
+
+            {/* Logo 5: Waihenya Foundation */}
+            <div 
+              className="flex items-center gap-2 font-mono font-bold text-base sm:text-lg text-slate-300 hover:text-white transition-colors cursor-pointer col-span-2 sm:col-span-1"
+              onClick={() => {
+                setActiveTab('foundation');
+                window.location.hash = 'foundation';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+            >
+              <Heart className="w-5 h-5 text-red-400" />
+              <span>FOUNDATION</span>
+              <span className="text-[9px] font-mono uppercase bg-red-500/20 text-red-300 px-1.5 py-0.5 rounded border border-red-500/30">IMPACT</span>
             </div>
 
           </div>
@@ -234,17 +273,17 @@ export function WhatIDo({ onNavigate }: WhatIDoProps) {
                 </div>
 
                 {/* Interactive Network Node Diagram (Matching screenshot UI mockup) */}
-                <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between shadow-inner mb-8 overflow-hidden">
+                <div className="relative w-full aspect-auto min-h-[300px] sm:min-h-0 sm:aspect-[21/9] bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 flex flex-col justify-between shadow-inner mb-6 sm:mb-8 overflow-hidden">
                   <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:16px_16px] opacity-70" />
                   
                   {/* Central Node & Satellites */}
-                  <div className="relative z-10 flex items-center justify-center h-full">
+                  <div className="relative z-10 flex items-center justify-center h-full min-h-[200px] py-4">
                     {/* Center Core Node */}
                     <div className="relative z-20 flex flex-col items-center">
-                      <div className="w-16 h-16 rounded-full bg-slate-950 text-white flex items-center justify-center p-3 shadow-2xl border-2 border-[#0284c7]">
+                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-slate-950 text-white flex items-center justify-center p-2.5 sm:p-3 shadow-2xl border-2 border-[#0284c7]">
                         <ApexLogoSvg size="100%" variant="default" />
                       </div>
-                      <span className="text-[11px] font-mono font-bold text-slate-900 mt-2 bg-white px-2 py-0.5 rounded border border-slate-200 shadow-sm">
+                      <span className="text-[10px] sm:text-[11px] font-mono font-bold text-slate-900 mt-1.5 sm:mt-2 bg-white px-2 py-0.5 rounded border border-slate-200 shadow-sm whitespace-nowrap">
                         Studio Agent Core
                       </span>
                     </div>
@@ -258,27 +297,27 @@ export function WhatIDo({ onNavigate }: WhatIDoProps) {
                     </svg>
 
                     {/* Node 1: WhatsApp / CRM */}
-                    <div className="absolute top-[18%] left-[14%] bg-white border border-slate-300 rounded-xl px-3 py-1.5 flex items-center gap-2 shadow-md">
-                      <div className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
-                      <span className="text-xs font-bold text-slate-800">WhatsApp CRM</span>
+                    <div className="absolute top-[12%] sm:top-[18%] left-[6%] sm:left-[14%] bg-white border border-slate-300 rounded-xl px-2.5 sm:px-3 py-1 sm:py-1.5 flex items-center gap-1.5 sm:gap-2 shadow-md">
+                      <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-emerald-500 shrink-0" />
+                      <span className="text-[10px] sm:text-xs font-bold text-slate-800 whitespace-nowrap">WhatsApp CRM</span>
                     </div>
 
                     {/* Node 2: PostgreSQL / Databases */}
-                    <div className="absolute bottom-[18%] left-[18%] bg-white border border-slate-300 rounded-xl px-3 py-1.5 flex items-center gap-2 shadow-md">
-                      <div className="w-2.5 h-2.5 rounded-full bg-blue-500" />
-                      <span className="text-xs font-bold text-slate-800">PostgreSQL</span>
+                    <div className="absolute bottom-[12%] sm:bottom-[18%] left-[8%] sm:left-[18%] bg-white border border-slate-300 rounded-xl px-2.5 sm:px-3 py-1 sm:py-1.5 flex items-center gap-1.5 sm:gap-2 shadow-md">
+                      <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-blue-500 shrink-0" />
+                      <span className="text-[10px] sm:text-xs font-bold text-slate-800 whitespace-nowrap">PostgreSQL</span>
                     </div>
 
                     {/* Node 3: Stripe / M-Pesa */}
-                    <div className="absolute top-[18%] right-[14%] bg-white border border-slate-300 rounded-xl px-3 py-1.5 flex items-center gap-2 shadow-md">
-                      <div className="w-2.5 h-2.5 rounded-full bg-indigo-500" />
-                      <span className="text-xs font-bold text-slate-800">M-Pesa / Stripe</span>
+                    <div className="absolute top-[12%] sm:top-[18%] right-[6%] sm:right-[14%] bg-white border border-slate-300 rounded-xl px-2.5 sm:px-3 py-1 sm:py-1.5 flex items-center gap-1.5 sm:gap-2 shadow-md">
+                      <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-indigo-500 shrink-0" />
+                      <span className="text-[10px] sm:text-xs font-bold text-slate-800 whitespace-nowrap">M-Pesa / Stripe</span>
                     </div>
 
                     {/* Node 4: Documents & RAG */}
-                    <div className="absolute bottom-[18%] right-[16%] bg-white border border-slate-300 rounded-xl px-3 py-1.5 flex items-center gap-2 shadow-md">
-                      <div className="w-2.5 h-2.5 rounded-full bg-amber-500" />
-                      <span className="text-xs font-bold text-slate-800">Vector RAG</span>
+                    <div className="absolute bottom-[12%] sm:bottom-[18%] right-[8%] sm:right-[16%] bg-white border border-slate-300 rounded-xl px-2.5 sm:px-3 py-1 sm:py-1.5 flex items-center gap-1.5 sm:gap-2 shadow-md">
+                      <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-amber-500 shrink-0" />
+                      <span className="text-[10px] sm:text-xs font-bold text-slate-800 whitespace-nowrap">Vector RAG</span>
                     </div>
                   </div>
 
@@ -289,12 +328,12 @@ export function WhatIDo({ onNavigate }: WhatIDoProps) {
                       value={promptInput}
                       onChange={(e) => setPromptInput(e.target.value)}
                       placeholder="Ask AI Solution Studio anything..."
-                      className="flex-1 text-xs bg-slate-50 border border-slate-300 rounded-lg px-3.5 py-2 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#0284c7]"
+                      className="flex-1 text-xs bg-slate-50 border border-slate-300 rounded-lg px-3 sm:px-3.5 py-2 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#0284c7] min-w-0"
                     />
                     <button
                       type="submit"
                       disabled={isProcessingPrompt}
-                      className="px-3 py-2 bg-slate-900 text-white rounded-lg text-xs font-bold flex items-center gap-1 hover:bg-[#0284c7] transition-colors cursor-pointer"
+                      className="px-3 py-2 bg-slate-900 text-white rounded-lg text-xs font-bold flex items-center gap-1 hover:bg-[#0284c7] transition-colors cursor-pointer shrink-0"
                     >
                       {isProcessingPrompt ? <Activity className="w-3.5 h-3.5 animate-spin" /> : <Send className="w-3.5 h-3.5" />}
                     </button>
@@ -478,8 +517,8 @@ export function WhatIDo({ onNavigate }: WhatIDoProps) {
                 </div>
 
                 {/* Dashboard Engine Mockup */}
-                <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] bg-[#04060d] border border-[#1e293b] rounded-2xl p-5 mb-8 shadow-inner overflow-hidden">
-                  <div className="flex items-center justify-between border-b border-[#1e293b] pb-3 mb-4 text-[11px] font-mono text-slate-400">
+                <div className="relative w-full aspect-auto sm:aspect-[21/9] bg-[#04060d] border border-[#1e293b] rounded-2xl p-4 sm:p-5 mb-8 shadow-inner overflow-hidden">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-[#1e293b] pb-3 mb-4 text-[11px] font-mono text-slate-400 gap-1.5">
                     <span className="text-white font-bold flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-emerald-400" />
                       The AI Conversation &amp; Safety Engine
@@ -487,10 +526,10 @@ export function WhatIDo({ onNavigate }: WhatIDoProps) {
                     <span className="text-[#00a8ff]">Latency: 142ms</span>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4 h-[calc(100%-40px)]">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     {/* Left Pane: Multi-Agent Dispatch */}
                     <div className="bg-[#0b1020] border border-[#1e293b] rounded-xl p-3 flex flex-col justify-between text-left">
-                      <span className="text-[10px] font-mono text-[#00a8ff] uppercase font-bold">Agent Pipeline</span>
+                      <span className="text-[10px] font-mono text-[#00a8ff] uppercase font-bold mb-2 block">Agent Pipeline</span>
                       <div className="space-y-1.5 text-[11px] text-slate-300 font-mono">
                         <div className="flex items-center justify-between text-emerald-400">
                           <span>✓ Audio Stream Synced</span>
@@ -509,9 +548,9 @@ export function WhatIDo({ onNavigate }: WhatIDoProps) {
 
                     {/* Right Pane: Waveform & Threat Classification */}
                     <div className="bg-[#0b1020] border border-[#1e293b] rounded-xl p-3 flex flex-col justify-between text-left">
-                      <span className="text-[10px] font-mono text-[#00a8ff] uppercase font-bold">Harassment Guardian</span>
+                      <span className="text-[10px] font-mono text-[#00a8ff] uppercase font-bold mb-2 block">Harassment Guardian</span>
                       {/* Animated Audio Waveform Graphic */}
-                      <div className="flex items-center gap-1 h-8 justify-center">
+                      <div className="flex items-center gap-1 h-8 justify-center mb-2">
                         {[40, 75, 95, 30, 85, 60, 100, 45, 90, 35, 70, 50].map((h, i) => (
                           <div
                             key={i}
@@ -552,6 +591,67 @@ export function WhatIDo({ onNavigate }: WhatIDoProps) {
                 <span className="text-xs font-mono text-slate-400">Enterprise AI</span>
               </div>
 
+            </div>
+
+            {/* CARD 5: THE PHILANTHROPIC INITIATIVE: WAIHENYA FOUNDATION */}
+            <div className="md:col-span-12 bg-gradient-to-r from-[#070b16] via-[#091226] to-[#070b16] border border-[#1e293b] rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden group hover:border-[#00a8ff]/60 transition-all text-white">
+              <div className="absolute top-0 right-0 w-96 h-96 bg-[#00a8ff]/10 rounded-full blur-3xl pointer-events-none" />
+              
+              <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div className="lg:col-span-8 text-left space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-xl bg-[#0c101d] border border-[#00a8ff]/40 flex items-center justify-center text-[#00a8ff]">
+                      <Heart className="w-5 h-5 text-[#00a8ff]" />
+                    </div>
+                    <span className="font-sans font-black text-xl sm:text-2xl text-white uppercase tracking-wider">
+                      THE WAIHENYA FOUNDATION
+                    </span>
+                    <span className="text-[10px] font-mono uppercase bg-[#00a8ff]/20 text-[#00a8ff] px-2.5 py-1 rounded-full border border-[#00a8ff]/30 font-bold">
+                      Social Impact Arm
+                    </span>
+                  </div>
+
+                  <h3 className="font-sans font-black text-2xl sm:text-3xl text-white uppercase tracking-tight">
+                    Passing the torch. 1,200+ African youth trained in code.
+                  </h3>
+
+                  <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl">
+                    Every commercial system we deploy fuels our philanthropic pledge: tuition-free zero-to-one coding bootcamps, refurbished laptop distribution, and Starlink connectivity for underprivileged youth and rural innovation hubs in Kenya.
+                  </p>
+
+                  <div className="flex flex-wrap items-center gap-6 pt-2 font-mono text-xs text-slate-400">
+                    <div className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-emerald-400" />
+                      <span>150+ Laptops Donated</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-emerald-400" />
+                      <span>12 Rural Starlink Hubs</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-emerald-400" />
+                      <span>100% Free Tuition</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col items-start lg:items-end justify-center gap-4">
+                  <button
+                    onClick={() => {
+                      setActiveTab('foundation');
+                      window.location.hash = 'foundation';
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="w-full sm:w-auto px-8 py-4 bg-[#00a8ff] text-black font-extrabold text-xs sm:text-sm uppercase tracking-wider rounded-full hover:bg-white transition-all shadow-[0_0_25px_rgba(0,168,255,0.4)] cursor-pointer text-center"
+                  >
+                    Enter Foundation Page →
+                  </button>
+
+                  <span className="text-xs font-mono text-slate-400">
+                    100% Direct Pass-Through Impact
+                  </span>
+                </div>
+              </div>
             </div>
 
           </div>

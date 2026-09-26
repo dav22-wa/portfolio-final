@@ -28,7 +28,7 @@ export function Hero({ onNavigate }: HeroProps) {
   return (
     <section 
       id="hero" 
-      className="relative w-full min-h-[92vh] lg:min-h-screen bg-[#060813] text-white pt-36 lg:pt-40 pb-16 overflow-hidden flex flex-col justify-center border-b border-[#1e293b]"
+      className="relative w-full min-h-[85vh] sm:min-h-[92vh] lg:min-h-screen bg-[#060813] text-white pt-28 sm:pt-36 lg:pt-40 pb-12 sm:pb-16 overflow-hidden flex flex-col justify-center border-b border-[#1e293b]"
     >
       {/* Background Atmosphere */}
       <div className="absolute inset-0 bg-[#060813] pointer-events-none">
@@ -45,7 +45,7 @@ export function Hero({ onNavigate }: HeroProps) {
       </div>
 
       {/* Hero content: text on left, subject photo on right */}
-      <div className="max-w-[1360px] mx-auto px-6 lg:px-10 relative z-10 w-full flex-1 flex flex-col justify-center">
+      <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-10 relative z-10 w-full flex-1 flex flex-col justify-center">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           
           {/* Left Column: Bold Display Typography */}

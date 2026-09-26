@@ -44,7 +44,9 @@ export default function App() {
       const hash = window.location.hash.replace('#', '').toLowerCase();
       if (['ventures', 'ai-solution-studio'].includes(hash)) {
         setCurrentPage('what-i-do');
-      } else if (['story', 'speaking', 'testimonials', 'book', 'what-i-do', 'contact', 'blog', 'careers', 'brand'].includes(hash)) {
+      } else if (['foundation', 'waihenya-foundation'].includes(hash)) {
+        setCurrentPage('foundation');
+      } else if (['story', 'speaking', 'testimonials', 'book', 'what-i-do', 'contact', 'blog', 'careers', 'brand', 'foundation'].includes(hash)) {
         setCurrentPage(hash);
       } else {
         setCurrentPage('home');
@@ -113,7 +115,11 @@ export default function App() {
         )}
 
         {currentPage === 'what-i-do' && (
-          <WhatIDo onNavigate={handleNavigate} />
+          <WhatIDo onNavigate={handleNavigate} initialTab="ventures" />
+        )}
+
+        {currentPage === 'foundation' && (
+          <WhatIDo onNavigate={handleNavigate} initialTab="foundation" />
         )}
 
         {currentPage === 'careers' && (

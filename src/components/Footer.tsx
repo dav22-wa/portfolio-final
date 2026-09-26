@@ -99,6 +99,11 @@ export function Footer({ onNavigate }: FooterProps) {
                     Mozilla Agtech Lab
                   </button>
                 </li>
+                <li>
+                  <button onClick={() => handleLinkClick('foundation')} className="hover:text-white transition-colors cursor-pointer text-[#00a8ff]">
+                    Waihenya Foundation
+                  </button>
+                </li>
               </ul>
             </div>
 

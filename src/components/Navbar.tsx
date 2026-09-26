@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Menu, X, ChevronDown, Cpu, Globe, Mic, Layers, ArrowUpRight, Sparkles, ArrowRight } from 'lucide-react';
+import { Menu, X, ChevronDown, Cpu, Globe, Mic, Layers, ArrowUpRight, Sparkles, ArrowRight, Heart } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { BrandLogo } from './BrandLogo';
 
@@ -91,6 +91,13 @@ export function Navbar({ currentPage, onNavigate }: NavbarProps) {
       badge: 'Flagship'
     },
     {
+      title: 'Waihenya Foundation',
+      description: 'Philanthropy, rural coding bootcamps & hardware grants',
+      icon: Heart,
+      action: () => handleNavClick('foundation'),
+      badge: 'Giving Back'
+    },
+    {
       title: 'Davamos Tech',
       description: 'Bespoke high-performance software engineering',
       icon: Globe,
@@ -118,27 +125,27 @@ export function Navbar({ currentPage, onNavigate }: NavbarProps) {
     <header className="fixed top-0 left-0 right-0 w-full z-[100] transition-all duration-300">
       
       {/* 1. TOP ANNOUNCEMENT BANNER BAR */}
-      <div className="w-full bg-[#04060d] border-b border-[#1e293b]/70 py-2 px-4 text-center text-[11px] sm:text-xs font-sans flex items-center justify-center transition-colors">
+      <div className="w-full bg-[#04060d] border-b border-[#1e293b]/70 py-1.5 sm:py-2 px-3 sm:px-4 text-center text-[10px] sm:text-xs font-sans flex items-center justify-center transition-colors overflow-hidden">
         <button
           onClick={() => handleNavClick('book')}
-          className="flex items-center gap-2.5 font-bold tracking-wider text-slate-200 hover:text-white uppercase transition-colors cursor-pointer text-[10px] sm:text-xs"
+          className="flex items-center gap-1.5 sm:gap-2.5 font-bold tracking-wider text-slate-200 hover:text-white uppercase transition-colors cursor-pointer text-[9.5px] sm:text-xs max-w-full truncate"
         >
-          <span className="w-2 h-2 rounded-full bg-[#00a8ff] animate-pulse" />
-          <span>FROM FIRST CLASS TO FIRST MILLION</span>
+          <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#00a8ff] animate-pulse shrink-0" />
+          <span className="truncate">FROM FIRST CLASS TO FIRST MILLION</span>
+          <span className="text-[#00a8ff] text-xs hidden xs:inline">·</span>
+          <span className="hidden sm:inline">A KENYAN GRADUATE’S ROADMAP</span>
           <span className="text-[#00a8ff] text-xs">·</span>
-          <span>A KENYAN GRADUATE’S ROADMAP</span>
-          <span className="text-[#00a8ff] text-xs">·</span>
-          <span className="text-[#00a8ff] underline underline-offset-2">READ THE BLUEPRINT →</span>
+          <span className="text-[#00a8ff] underline underline-offset-2 shrink-0">READ BLUEPRINT →</span>
         </button>
       </div>
 
       {/* 2. STICKY MAIN NAVBAR */}
       <div className={`w-full transition-all duration-300 ${
         isScrolled 
-          ? 'bg-[#060813]/95 backdrop-blur-md border-b border-[#1e293b] py-3.5 shadow-2xl' 
-          : 'bg-[#060813]/80 backdrop-blur-sm border-b border-[#1e293b]/50 py-4'
+          ? 'bg-[#060813]/95 backdrop-blur-md border-b border-[#1e293b] py-3 shadow-2xl' 
+          : 'bg-[#060813]/80 backdrop-blur-sm border-b border-[#1e293b]/50 py-3.5 sm:py-4'
       }`}>
-        <div className="max-w-[1360px] mx-auto px-6 lg:px-10 flex items-center justify-between">
+        <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between">
           
           {/* Zone 1: Brand Wordmark (Single Text Element Wordmark) */}
           <button 
