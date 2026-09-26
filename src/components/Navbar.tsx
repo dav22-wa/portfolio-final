@@ -87,8 +87,7 @@ export function Navbar({ currentPage, onNavigate }: NavbarProps) {
       title: 'AI Solution Studio',
       description: 'Agentic workflows, RAG & enterprise AI systems',
       icon: Cpu,
-      href: 'https://ai-solution-studio.vercel.app/',
-      isExternal: true,
+      action: () => handleNavClick('what-i-do'),
       badge: 'Flagship'
     },
     {

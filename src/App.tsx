@@ -42,7 +42,9 @@ export default function App() {
       setPostId(null);
 
       const hash = window.location.hash.replace('#', '').toLowerCase();
-      if (['story', 'speaking', 'testimonials', 'book', 'what-i-do', 'contact', 'blog', 'careers', 'brand'].includes(hash)) {
+      if (['ventures', 'ai-solution-studio'].includes(hash)) {
+        setCurrentPage('what-i-do');
+      } else if (['story', 'speaking', 'testimonials', 'book', 'what-i-do', 'contact', 'blog', 'careers', 'brand'].includes(hash)) {
         setCurrentPage(hash);
       } else {
         setCurrentPage('home');
