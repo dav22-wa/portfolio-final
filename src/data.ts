@@ -77,7 +77,7 @@ We have the talent. We have the drive. We just need to aim our keyboards at the 
     },
     {
       id: "legal-chatbot",
-      category: "AI",
+      category: "AI & NLP",
       date: "March 2025",
       title: "What Building a Legal Chatbot for Ordinary Kenyans Taught Me",
       excerpt: "Sheria Assist started as an assignment. Then I realized how many people do not know their own rights.",
@@ -98,6 +98,34 @@ Building this taught me several crucial lessons about AI safety and reliability:
 
 ### The Road Ahead
 While building safe, production-ready AI for the legal sector takes time and rigorous testing, the experiment proved something to me. AI's real power isn't in replacing lawyers; it's in democratizing access to basic legal knowledge so that the ordinary person isn't operating in the dark.
+      `
+    },
+    {
+      id: "freelancing-lessons",
+      category: "Freelancing & Business",
+      date: "February 2025",
+      title: "From Freelance Web Developer to Tech Agency Founder: 5 Hard Lessons",
+      excerpt: "Freelancing pays the bills, but building systems creates leverage. Here is what I learned transitioning from solo gigs to Davamos Tech.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+      content: `
+When you start freelancing as a computer science student in Kenya, the temptation is to say yes to every random job: fixing a broken WordPress plugin for KES 2,000, styling a landing page overnight, or writing an entire inventory system for peanuts.
+
+Over the past three years, navigating student life, First Class academic goals, and client work, I transitioned from an ad-hoc freelancer into running Davamos Tech. Here are the 5 lessons that made all the difference:
+
+### 1. Stop Selling Hours; Sell Solved Inefficiencies
+Clients don't care how many lines of CSS you wrote or how pretty your flexbox grid is. They care about: *Does this system make my staff faster? Does it save me KES 50,000 a month in manual bookkeeping? Does it look professional enough to close deals?* Price the outcome, not the hour.
+
+### 2. Contracts and Scopes Are Non-Negotiable
+In early freelancing, scope creep will devour your study hours. A client asks for "one small extra button" that actually requires building an entire backend authentication and payment web hook. Write explicit deliverables, milestones, and payment schedules upfront.
+
+### 3. Build Reusable Internal Libraries
+Every time you build an authentication flow, a database connection pool, or an M-Pesa integration, package it. Don't write boilerplate from scratch on client time. This is how Davamos Tech delivers custom systems in 2 weeks while others take 2 months.
+
+### 4. Communication Beats Perfection
+Technical developers often disappear into their IDEs for three weeks and emerge with something completely different from what the client envisioned. Send short Loom recordings, progress URLs, and weekly updates. Transparency builds repeat business.
+
+### 5. Transition from Solo Freelancer to Venture Builder
+Freelancing is active income—if you stop coding, the revenue stops. The long game is taking the cash flow from client delivery and reinvesting it into proprietary platforms, SaaS tools like SYNERGY, and equity ventures.
       `
     }
   ],

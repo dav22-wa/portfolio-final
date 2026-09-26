@@ -1,12 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-bg: #0b0b0b;
-  --color-brand-surface: #111318;
+  --color-brand-bg: #060813;
+  --color-brand-surface: #0c101d;
+  --color-brand-surface-elevated: #111726;
+  --color-brand-card: #0e1424;
+  --color-brand-border: #1e293b;
+  --color-brand-border-subtle: #2a374f;
+  --color-brand-sky: #00a8ff;
+  --color-brand-blue: #0284c7;
+  --color-brand-cyan: #38bdf8;
   --color-brand-gold: #e5b927;
-  --color-brand-text: #f5f5f5;
-  --color-brand-muted: #888888;
-  --color-brand-surface-hover: #1c1f26;
+  --color-brand-text: #ffffff;
+  --color-brand-body: #d4d4d4;
+  --color-brand-muted: #94a3b8;
 
   --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Barlow Condensed", "Oswald", ui-sans-serif, sans-serif;
@@ -14,42 +21,121 @@
 
 @layer base {
   body {
-    @apply bg-brand-bg text-brand-text font-sans leading-relaxed;
+    background-color: #060813;
+    color: #d4d4d4;
+    font-family: var(--font-sans);
+    line-height: 1.65;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-medium text-brand-text tracking-tight;
+    font-family: var(--font-display);
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
   }
   
   a {
-    @apply transition-colors;
+    transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
   }
 }
 
 @layer components {
-  .section-label {
-    @apply uppercase tracking-widest text-sm font-bold text-brand-gold mb-3 block;
+  .section-kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.8125rem;
+    font-weight: 800;
+    color: #00a8ff;
+    margin-bottom: 0.75rem;
+    display: block;
+    font-family: var(--font-sans);
   }
   
-  .btn-primary {
-    @apply inline-flex items-center justify-center px-8 py-3.5 bg-brand-gold text-black font-bold rounded hover:bg-yellow-600 transition-colors shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-offset-2;
+  /* Dan Martell signature sky-blue button */
+  .btn-sky {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 2rem;
+    background-color: #00a8ff;
+    color: #000000;
+    font-weight: 800;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 0.875rem;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 18px rgba(0, 168, 255, 0.35);
+  }
+  .btn-sky:hover {
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: 0 6px 24px rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+  }
+
+  /* Dan Martell signature white button */
+  .btn-white {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 2rem;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: 800;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 0.875rem;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+  .btn-white:hover {
+    background-color: #00a8ff;
+    color: #000000;
+    box-shadow: 0 6px 24px rgba(0, 168, 255, 0.4);
+    transform: translateY(-2px);
   }
   
-  .btn-outline {
-    @apply inline-flex items-center justify-center px-8 py-3.5 border border-white text-white font-medium rounded hover:bg-white/5 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-offset-2;
+  /* Outline button */
+  .btn-outline-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 2rem;
+    border: 1px solid #1e293b;
+    background-color: rgba(14, 20, 36, 0.85);
+    color: #ffffff;
+    font-weight: 700;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 0.875rem;
+    transition: all 0.25s ease;
+  }
+  .btn-outline-pill:hover {
+    border-color: #00a8ff;
+    color: #00a8ff;
+    background-color: #111726;
+    transform: translateY(-2px);
   }
 }
 
+/* Custom scrollbars */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-brand-surface);
+  background: #060813;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #1e293b;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-brand-gold);
+  background: #00a8ff;
 }

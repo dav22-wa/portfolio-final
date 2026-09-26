@@ -1,129 +1,223 @@
-import { motion } from 'motion/react';
-import { Target, ShieldCheck, Cpu, ArrowUpRight, Check } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Rocket, Building2, GraduationCap, ArrowRight, Check, X, Sparkles } from 'lucide-react';
 
-export function WhoIsThisFor() {
-  const segments = [
+interface WhoIsThisForProps {
+  onNavigate?: (page: string) => void;
+}
+
+export function WhoIsThisFor({ onNavigate }: WhoIsThisForProps) {
+  const [selectedAudience, setSelectedAudience] = useState<string | null>(null);
+
+  const handleAudienceClick = (audienceId: string) => {
+    setSelectedAudience(audienceId);
+  };
+
+  const handleDirectContact = (subject: string) => {
+    setSelectedAudience(null);
+    if (onNavigate) {
+      onNavigate('contact');
+    } else {
+      const el = document.getElementById('contact');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const cards = [
     {
-      id: "ai-founders",
-      icon: Cpu,
-      title: "AI Founders & Tech Startups",
-      description: "You are building the next generation of intelligent products but need high-velocity prototype execution, robust prompt engineering, or production LLM microservices that don't scale cost exponentially.",
+      id: "startups",
+      icon: Rocket,
+      title: "Startups & Small Businesses",
+      tagline: "High-Velocity MVPs & Applied AI",
+      description: "Need AI integration, custom software, or full-stack web platforms built fast without technical bloat? I engineer resilient MVPs, API backends, and automated workflows that scale.",
       outcomes: [
-        "Rapid API scaffolding with Node & Python",
-        "Cost-aware retrieval-augmented models (RAG)",
-        "Secure client-to-server proxy layers"
+        "Rapid prototype-to-production in weeks, not months",
+        "Cost-effective inference & local RAG architectures",
+        "Clean, maintainable Python, Flask & React codebases"
       ],
-      badge: "VELOCITY"
+      ctaText: "Build Your Product With Dave",
+      badge: "VENTURE BUILDERS"
     },
     {
-      id: "social-impact",
-      icon: ShieldCheck,
-      title: "Social Initiatives & Trust Teams",
-      description: "You require tech solutions backed by audited guidelines and real-world compliance. Benefit from a verified winner of the global Mozilla Responsible Computing Challenge.",
+      id: "local-businesses",
+      icon: Building2,
+      title: "Local Embu & Naivasha Businesses",
+      tagline: "Operational Automation & Digital Presence",
+      description: "Modernizing operations with digital management systems, automated attendance, inventory tools, and high-performance customer websites that drive actual revenue and eliminate manual labor.",
       outcomes: [
-        "Bias-audited classification models",
-        "Privacy-first edge processing pipelines",
-        "Inclusive, local-first UX architectures"
+        "Automated attendance, inventory & record systems",
+        "Seamless M-Pesa, SMS & WhatsApp integrations",
+        "High-speed, SEO-optimized web platforms"
       ],
-      badge: "INTEGRITY"
+      ctaText: "Automate Your Business",
+      badge: "ENTERPRISE & LOCAL"
     },
     {
-      id: "scaling-ventures",
-      icon: Target,
-      title: "Scaling Ventures & SMBs",
-      description: "You have validation and revenue, but your team has outgrown sluggish templates. You need custom databases, automated cloud workflows, and high-performance bespoke networks.",
+      id: "developers-students",
+      icon: GraduationCap,
+      title: "Young Developers & Students",
+      tagline: "Mentorship & Practical Engineering",
+      description: "Mentoring the next generation of African builders. Breaking down the path from zero programming background to first-class technical competence, global awards, and real client projects.",
       outcomes: [
-        "Slick high-performing Next/Vite web apps",
-        "Durable, structured database schemas",
-        "Optimized digital scaling strategies"
+        "From zero code to building production machine learning",
+        "First Class Honours study & project discipline",
+        "Moving past tutorial paralysis to ship real software"
       ],
-      badge: "AUTOMATION"
+      ctaText: "Join Dave's Mentorship",
+      badge: "FUTURE BUILDERS"
     }
   ];
 
+  const activeData = cards.find(c => c.id === selectedAudience);
+
   return (
-    <section className="py-[100px] lg:py-[140px] w-full bg-[#09090b] text-white border-t border-white/5 relative">
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+    <section id="who-i-help" className="py-24 lg:py-32 w-full bg-[#0c101d] text-[#d4d4d4] border-t border-[#1e293b] relative">
+      <div className="max-w-[1360px] mx-auto px-6 lg:px-10">
         
-        {/* Dan Martell Bold Outline Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 lg:mb-24 gap-6">
-          <div className="max-w-xl text-left">
-            <span className="section-label !text-[#e5b927] mb-4">TARGET AUDIENCE</span>
-            <h2 className="text-4xl sm:text-5xl font-display font-extrabold text-white uppercase tracking-tighter leading-none">
-              WHO IS THIS <span className="text-[#e5b927]">FOR</span>?
-            </h2>
-            <p className="text-[#aaaaaa] font-sans text-md leading-relaxed mt-4">
-              I don't just write individual lines of functions. I align robust technical ecosystems to support ambitious visionaries demanding speed, safety and scale.
-            </p>
-          </div>
-          <div className="shrink-0">
-            <a 
-              href="#contact" 
-              className="inline-flex items-center gap-2 group text-xs sm:text-sm font-bold uppercase tracking-widest text-white hover:text-[#e5b927] transition-colors border-2 border-white/15 px-6 py-3.5 hover:border-[#e5b927] hover:shadow-[4px_4px_0_0_rgba(229,185,39,0.15)] transition-all rounded-sm"
-            >
-              <span>Verify Collaboration Fit</span>
-              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-            </a>
-          </div>
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
+          <span className="section-kicker">WHO I HELP</span>
+          <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-white uppercase tracking-tight leading-none mb-4">
+            SOLVING REAL PROBLEMS FOR <span className="text-[#00a8ff]">THREE CORE AUDIENCES</span>.
+          </h2>
+          <p className="text-[#94a3b8] font-sans text-base sm:text-lg leading-relaxed">
+            I don't believe in generic software. I tailor real-world engineering solutions to founders shipping products, businesses modernizing operations, and ambitious students learning to build.
+          </p>
         </div>
 
-        {/* Bento Grid */}
+        {/* 3-Column Card Grid (Dan Martell structure) */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {segments.map((segment, index) => {
-            const IconComponent = segment.icon;
+          {cards.map((card, index) => {
+            const Icon = card.icon;
             return (
               <motion.div
-                key={segment.id}
-                initial={{ opacity: 0, y: 30 }}
+                key={card.id}
+                initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="bg-[#111318] border-2 border-white/5 hover:border-[#e5b927]/40 p-8 lg:p-10 flex flex-col justify-between transition-all duration-300 relative rounded-sm shadow-xl group hover:-translate-y-1"
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: index * 0.12 }}
+                className="bg-[#0e1424] border border-[#1e293b] hover:border-[#00a8ff]/60 p-8 lg:p-10 flex flex-col justify-between transition-all duration-300 relative rounded-2xl shadow-xl group hover:-translate-y-1.5"
               >
                 {/* Visual Corner Tag */}
-                <div className="absolute top-4 right-4 text-[9px] font-sans font-extrabold tracking-widest uppercase bg-[#e5b927]/10 text-[#e5b927] py-1 px-2.5 rounded-sm">
-                  {segment.badge}
+                <div className="absolute top-6 right-6 text-[10px] font-mono font-bold tracking-widest uppercase py-1 px-2.5 rounded-md bg-[#131b2e] border border-[#1e293b] text-[#00a8ff]">
+                  {card.badge}
                 </div>
 
                 <div>
                   {/* Icon Block */}
-                  <div className="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center rounded-sm mb-8 text-[#e5b927] transition-transform duration-300 group-hover:scale-115">
-                    <IconComponent className="w-6 h-6" />
+                  <div className="w-14 h-14 bg-[#131b2e] border border-[#1e293b] flex items-center justify-center rounded-xl mb-6 transition-transform duration-300 group-hover:scale-105 text-[#00a8ff]">
+                    <Icon className="w-7 h-7" />
                   </div>
 
-                  {/* Title & Description */}
-                  <h3 className="text-xl sm:text-2xl font-display font-extrabold uppercase tracking-tight text-white mb-4">
-                    {segment.title}
+                  {/* Title & Tagline */}
+                  <h3 className="text-2xl font-display font-extrabold uppercase tracking-tight text-white mb-2 group-hover:text-[#00a8ff] transition-colors">
+                    {card.title}
                   </h3>
-                  <p className="text-[#999999] font-sans text-xs sm:text-sm leading-relaxed mb-8">
-                    {segment.description}
+                  <p className="text-xs font-bold uppercase tracking-wider text-[#00a8ff] mb-4">
+                    {card.tagline}
                   </p>
 
-                  <div className="w-full h-px bg-white/5 mb-8" />
+                  <p className="text-[#94a3b8] font-sans text-sm leading-relaxed mb-6">
+                    {card.description}
+                  </p>
 
-                  {/* Bullet Outlines */}
-                  <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#666666] mb-4">
-                    Immediate outcomes:
+                  <div className="w-full h-px bg-[#1e293b] mb-6" />
+
+                  {/* Immediate Outcomes */}
+                  <h4 className="text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-3">
+                    Key Outcomes Delivered:
                   </h4>
-                  <ul className="space-y-3">
-                    {segment.outcomes.map((outcome, idx) => (
+                  <ul className="space-y-2.5 mb-8">
+                    {card.outcomes.map((outcome, idx) => (
                       <li key={idx} className="flex items-start gap-2.5">
-                        <span className="w-4 h-4 bg-[#e5b927]/10 rounded-full flex items-center justify-center shrink-0 mt-0.5">
-                          <Check className="w-3 h-3 text-[#e5b927]" />
+                        <span className="w-4 h-4 rounded-full bg-[#00a8ff]/10 flex items-center justify-center shrink-0 mt-0.5">
+                          <Check className="w-3 h-3 text-[#00a8ff]" />
                         </span>
-                        <span className="text-[13px] text-zinc-300 font-sans font-medium">
+                        <span className="text-xs text-[#d4d4d4] font-sans font-medium">
                           {outcome}
                         </span>
                       </li>
                     ))}
                   </ul>
                 </div>
+
+                {/* "Learn More" Button */}
+                <button
+                  onClick={() => handleAudienceClick(card.id)}
+                  className="w-full py-3.5 px-5 bg-[#131b2e] border border-[#1e293b] group-hover:bg-[#00a8ff] group-hover:text-black group-hover:border-[#00a8ff] text-white font-extrabold text-xs uppercase tracking-wider rounded-xl transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
+                >
+                  <span>Learn More</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
               </motion.div>
             );
           })}
         </div>
 
       </div>
+
+      {/* Audience Detail Modal */}
+      <AnimatePresence>
+        {selectedAudience && activeData && (
+          <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="bg-[#0e1424] border border-[#1e293b] rounded-2xl p-6 sm:p-8 max-w-lg w-full relative shadow-2xl"
+            >
+              <button
+                onClick={() => setSelectedAudience(null)}
+                className="absolute top-5 right-5 text-slate-400 hover:text-white p-1 rounded-lg hover:bg-[#131b2e] transition-colors"
+                aria-label="Close modal"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="w-12 h-12 rounded-xl bg-[#131b2e] border border-[#1e293b] flex items-center justify-center text-[#00a8ff] mb-4">
+                <activeData.icon className="w-6 h-6" />
+              </div>
+
+              <span className="text-[10px] font-mono text-[#00a8ff] uppercase font-bold tracking-widest block mb-1">
+                {activeData.badge}
+              </span>
+              <h3 className="text-2xl font-display font-extrabold text-white uppercase mb-2">
+                {activeData.title}
+              </h3>
+              <p className="text-sm text-[#94a3b8] mb-6">
+                {activeData.description}
+              </p>
+
+              <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-3">
+                How We Collaborate:
+              </h4>
+              <ul className="space-y-2 mb-6">
+                {activeData.outcomes.map((o, i) => (
+                  <li key={i} className="flex items-center gap-2 text-xs text-slate-300">
+                    <Check className="w-4 h-4 text-[#00a8ff] shrink-0" />
+                    <span>{o}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex gap-3">
+                <button
+                  onClick={() => handleDirectContact(activeData.title)}
+                  className="flex-1 py-3 bg-[#00a8ff] text-black font-extrabold text-xs uppercase tracking-wider rounded-xl hover:bg-white transition-all text-center"
+                >
+                  {activeData.ctaText}
+                </button>
+                <button
+                  onClick={() => setSelectedAudience(null)}
+                  className="px-5 py-3 bg-[#131b2e] border border-[#1e293b] text-slate-300 font-bold text-xs uppercase tracking-wider rounded-xl hover:text-white"
+                >
+                  Close
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

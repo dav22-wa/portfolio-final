@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
+import { Send, CheckCircle2, Sparkles, Mail } from 'lucide-react';
 
 export function Newsletter() {
   const [email, setEmail] = useState('');
@@ -14,57 +15,62 @@ export function Newsletter() {
   };
 
   return (
-    <section id="newsletter" className="py-[100px] lg:py-[140px] w-full bg-[#0d1117] text-white flex justify-center items-center border-t border-white/5 relative">
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-8 w-full text-center">
-        
+    <section id="newsletter" className="py-24 lg:py-32 w-full bg-[#060813] border-t border-[#1e293b] text-[#d4d4d4] flex justify-center items-center relative overflow-hidden">
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#00a8ff]/5 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="max-w-[1360px] mx-auto px-6 lg:px-10 w-full text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
+          viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.7 }}
-          className="max-w-4xl mx-auto border-4 border-black bg-[#111318] p-8 sm:p-12 lg:p-16 rounded-sm shadow-[12px_12px_0_0_rgba(229,185,39,0.15)]"
+          className="max-w-3xl mx-auto bg-[#0e1424] border border-[#1e293b] p-8 sm:p-12 lg:p-16 rounded-3xl shadow-2xl"
         >
-          <span className="section-label !text-[#e5b927] mb-6">THE INBOX DEBRIEF</span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white leading-[0.95] mb-6 uppercase tracking-tight">
-            THE WEEKLY BRIEF THAT KEEPS YOU BUILDING.
+          <span className="section-kicker">JOIN 2,400+ BUILDERS &amp; FOUNDERS</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white leading-[0.96] mb-4 uppercase tracking-tight">
+            THE WEEKLY <span className="text-[#00a8ff]">BUILDER'S DISPATCH</span>.
           </h2>
-          <p className="font-sans text-[#aaaaaa] text-sm sm:text-base mb-10 max-w-2xl mx-auto">
-            Practical breakdowns of production AI blueprints, scale strategies, and behind-the-scenes engineering. Delivered directly to your inbox every single Sunday.
+          <p className="font-sans text-[#94a3b8] text-sm sm:text-base mb-8 max-w-xl mx-auto leading-relaxed">
+            Every week, I send actionable breakdowns on Python &amp; Flask architectures, applied AI models, lessons learned running Davamos Tech, and the reality of building tech companies from Kenya.
           </p>
 
           {status === 'success' ? (
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="py-8 border-2 border-[#e5b927] bg-[#111318] rounded"
+              className="py-6 px-4 border border-[#00a8ff] bg-[#131b2e] rounded-2xl flex items-center justify-center gap-3 text-white"
             >
-              <h3 className="font-display font-bold text-2xl uppercase tracking-widest text-[#e5b927]">YOU ARE IN! WELCOME TO THE BLUEPRINT HUB.</h3>
+              <CheckCircle2 className="w-5 h-5 text-[#00a8ff]" />
+              <span className="font-display font-bold text-lg uppercase tracking-wide">
+                You're in! Welcome to the builder dispatch. Check your inbox for the first guide.
+              </span>
             </motion.div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-stretch justify-center max-w-xl mx-auto gap-3 sm:gap-0">
-              <input
-                type="email"
-                placeholder="Enter your private email address"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="flex-grow bg-[#09090b] border-2 border-white/10 placeholder-stone-500 text-white font-sans text-sm sm:text-md px-6 py-4 rounded-sm focus:outline-none focus:border-[#e5b927] sm:rounded-r-none transition-colors"
-              />
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-stretch justify-center max-w-lg mx-auto gap-3">
+              <div className="relative flex-grow">
+                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+                <input
+                  type="email"
+                  placeholder="Enter your email address..."
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full bg-[#060813] border border-[#1e293b] focus:border-[#00a8ff] placeholder-slate-500 text-white font-sans text-sm pl-11 pr-4 py-3.5 rounded-full outline-none transition-colors"
+                />
+              </div>
               <button 
                 type="submit" 
-                className="px-8 py-4 bg-[#e5b927] text-black font-extrabold border-2 border-black tracking-widest hover:bg-white hover:shadow-[4px_4px_0_0_rgba(255,255,255,1)] hover:-translate-y-0.5 active:translate-y-0 text-xs sm:text-sm uppercase transition-all whitespace-nowrap rounded-sm sm:rounded-l-none cursor-pointer"
+                className="px-8 py-3.5 bg-[#00a8ff] text-black font-extrabold tracking-wider hover:bg-white transition-all text-xs uppercase rounded-full cursor-pointer whitespace-nowrap shadow-[0_0_18px_rgba(0,168,255,0.35)]"
               >
                 JOIN THE LIST
               </button>
             </form>
           )}
 
-          {status !== 'success' && (
-            <p className="text-stone-500 font-sans text-[10px] mt-6 uppercase tracking-widest font-extrabold">
-              Strict privacy. Unsubscribe easily with a single click.
-            </p>
-          )}
-
+          <p className="text-[#94a3b8] font-sans text-xs mt-4">
+            No spam, ever. Actionable technical lessons only. Unsubscribe with 1 click.
+          </p>
         </motion.div>
       </div>
     </section>
